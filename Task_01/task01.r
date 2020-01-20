@@ -206,3 +206,7 @@ data(mtcars)
 boxplot(mpg ~ cyl, data = mtcars)
 hist(mtcars$mpg)
 0
+cd ~ /Desktop/Evolution/Tasks
+git add -A
+git commit -m "Sherwin Miller Task 01 upload c"
+git push -u origin master
