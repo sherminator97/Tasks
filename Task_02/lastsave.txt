@@ -1,0 +1,2961 @@
+
+R version 3.6.2 (2019-12-12) -- "Dark and Stormy Night"
+Copyright (C) 2019 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> setwd("C:\\Users\\Sherm\\Desktop\\Evolution\\Tasks\\Task_02")
+> beren3 <- read.csv("beren_new.csv")
+> beren3
+    ï..year month day      dotw start_hour start_minute end_hour end_minute
+1      2019     4  18  Thursday         11           53       NA         NA
+2      2019     4  18  Thursday         NA           NA       NA         NA
+3      2019     4  20  Saturday         NA           NA       NA         NA
+4      2019     4  22    Monday         NA           NA       NA         NA
+5      2019     4  22    Monday         NA           NA       NA         NA
+6      2019     4  22    Monday         NA           NA       NA         NA
+7      2019     4  26    Friday         NA           NA       NA         NA
+8      2019     4  26    Friday         NA           NA       NA         NA
+9      2019     4  30   Tuesday         NA           NA       NA         NA
+10     2019     4  30   Tuesday         NA           NA       NA         NA
+11     2019     5  20    Monday         NA           NA       NA         NA
+12     2019     5  20    Monday         NA           NA       NA         NA
+13     2019     5  20    Monday         NA           NA       NA         NA
+14     2019     6  24    Monday         NA           NA       NA         NA
+15     2019     6  24    Monday         NA           NA       NA         NA
+16     2019     6  24    Monday         NA           NA       NA         NA
+17     2019     8  19    Monday         NA           NA       NA         NA
+18     2019     8  19    Monday         NA           NA       NA         NA
+19     2019     8  19    Monday         NA           NA       NA         NA
+20     2019     8  22  Thursday         10           30       NA         NA
+21     2019     8  22  Thursday         12           20       NA         NA
+22     2019     8  22  Thursday         13           30       NA         NA
+23     2019     8  22  Thursday         11            0       NA         NA
+24     2019     8  22  Thursday         10           45       NA         NA
+25     2019     8  22  Thursday         13           40       NA         NA
+26     2019     8  22  Thursday         12           30       13         30
+27     2019     8  23    Friday          6           48       NA         NA
+28     2019     8  23    Friday          7           19       NA         NA
+29     2019     8  23    Friday          9           40       NA         NA
+30     2019     8  23    Friday         11           15       NA         NA
+31     2019     8  23    Friday         13            0       NA         NA
+32     2019     8  23    Friday          8           38       NA         NA
+33     2019     8  23    Friday         10           30       NA         NA
+34     2019     8  23    Friday         12           45       NA         NA
+35     2019     8  23    Friday          8           55        9         36
+36     2019     8  23    Friday         11           52       12         46
+37     2019     8  26    Monday          7           10       NA         NA
+38     2019     8  26    Monday         10           15       NA         NA
+39     2019     8  26    Monday         11           40       NA         NA
+40     2019     8  26    Monday         13           32       NA         NA
+41     2019     8  26    Monday         14           32       NA         NA
+42     2019     8  26    Monday         15           10       NA         NA
+43     2019     8  26    Monday          7           45       NA         NA
+44     2019     8  26    Monday         10           48       NA         NA
+45     2019     8  26    Monday         11           40       NA         NA
+46     2019     8  26    Monday         14           13       NA         NA
+47     2019     8  26    Monday          8           40       10         10
+48     2019     8  26    Monday         12           45       13         20
+49     2019     8  26    Monday          6           35       NA         NA
+50     2019     8  27   Tuesday          8            0       NA         NA
+51     2019     8  27   Tuesday         10            0       NA         NA
+52     2019     8  27   Tuesday         10           35       NA         NA
+53     2019     8  27   Tuesday         12           40       NA         NA
+54     2019     8  27   Tuesday         13           45       NA         NA
+55     2019     8  27   Tuesday          8           15       NA         NA
+56     2019     8  27   Tuesday          9            0       NA         NA
+57     2019     8  27   Tuesday         11            0       NA         NA
+58     2019     8  27   Tuesday         13            5       NA         NA
+59     2019     8  27   Tuesday         14           50       NA         NA
+60     2019     8  27   Tuesday         11           10       12         40
+61     2019     8  27   Tuesday         14           10       14         45
+62     2019     8  30    Friday          6           45       NA         NA
+63     2019     8  30    Friday          7           10       NA         NA
+64     2019     8  30    Friday          8           45       NA         NA
+65     2019     8  30    Friday          9            9       NA         NA
+66     2019     8  30    Friday         11           35       NA         NA
+67     2019     8  30    Friday         12           50       NA         NA
+68     2019     8  30    Friday         14           16       NA         NA
+69     2019     8  30    Friday         15           20       NA         NA
+70     2019     8  30    Friday          8           50       NA         NA
+71     2019     8  30    Friday         12           55       NA         NA
+72     2019     8  30    Friday         14           20       NA         NA
+73     2019     8  30    Friday         15            0       NA         NA
+74     2019     8  30    Friday          7           30        8         42
+75     2019     8  30    Friday         10           21       11         34
+76     2019     8  30    Friday         14           27       14         37
+77     2019     9   2    Monday         NA           NA       NA         NA
+78     2019     9   4 Wednesday          6           55       NA         NA
+79     2019     9   4 Wednesday          7            0       NA         NA
+80     2019     9   4 Wednesday          7           52       NA         NA
+81     2019     9   4 Wednesday          9           45       NA         NA
+82     2019     9   4 Wednesday         10           35       NA         NA
+83     2019     9   4 Wednesday         13            0       NA         NA
+84     2019     9   4 Wednesday         13           35       NA         NA
+85     2019     9   4 Wednesday         14           55       NA         NA
+86     2019     9   4 Wednesday          9           33       NA         NA
+87     2019     9   4 Wednesday         13            0       NA         NA
+88     2019     9   4 Wednesday          8            4        9         19
+89     2019     9   4 Wednesday         11            7       12         56
+90     2019     9   5  Thursday          6           40       NA         NA
+91     2019     9   5  Thursday          7           10       NA         NA
+92     2019     9   5  Thursday          9           20       NA         NA
+93     2019     9   5  Thursday         11           15       NA         NA
+94     2019     9   5  Thursday         12           42       NA         NA
+95     2019     9   5  Thursday         14           48       NA         NA
+96     2019     9   5  Thursday          9           20       NA         NA
+97     2019     9   5  Thursday         11           42       NA         NA
+98     2019     9   5  Thursday         15            0       NA         NA
+99     2019     9   5  Thursday          8            0        9         19
+100    2019     9   5  Thursday         12           15       12         33
+101    2019     9   5  Thursday         12           55       14         17
+102    2019     9   6    Friday          6           40       NA         NA
+103    2019     9   6    Friday          7            5       NA         NA
+104    2019     9   6    Friday          9           35       NA         NA
+105    2019     9   6    Friday          9           59       NA         NA
+106    2019     9   6    Friday         11           25       NA         NA
+107    2019     9   6    Friday         12           57       NA         NA
+108    2019     9   6    Friday         15            0       NA         NA
+109    2019     9   6    Friday          8            5       NA         NA
+110    2019     9   6    Friday         12           30       NA         NA
+111    2019     9   6    Friday         15            0       NA         NA
+112    2019     9   6    Friday          8           48        9         32
+113    2019     9   6    Friday         11           34       12         10
+114    2019     9   6    Friday         14           10       14         40
+115    2019     9   9    Monday          7            0       NA         NA
+116    2019     9   9    Monday          8           21       NA         NA
+117    2019     9   9    Monday         10           25       NA         NA
+118    2019     9   9    Monday         11           21       NA         NA
+119    2019     9   9    Monday         13           25       NA         NA
+120    2019     9   9    Monday         15           15       NA         NA
+121    2019     9   9    Monday          7           40       NA         NA
+122    2019     9   9    Monday         10           48       NA         NA
+123    2019     9   9    Monday         13           35       NA         NA
+124    2019     9   9    Monday          8           46        9         43
+125    2019     9   9    Monday         12           38       13         23
+126    2019     9   9    Monday          6           43       NA         NA
+127    2019     9  10   Tuesday          6           45       NA         NA
+128    2019     9  10   Tuesday          8           10       NA         NA
+129    2019     9  10   Tuesday          9           45       NA         NA
+130    2019     9  10   Tuesday         11           15       NA         NA
+131    2019     9  10   Tuesday         12           45       NA         NA
+132    2019     9  10   Tuesday         14           15       NA         NA
+133    2019     9  10   Tuesday          8            0       NA         NA
+134    2019     9  10   Tuesday         10           30       NA         NA
+135    2019     9  10   Tuesday         13           15       NA         NA
+136    2019     9  10   Tuesday          9            0        9         40
+137    2019     9  10   Tuesday         12            0       12         35
+138    2019     9  11 Wednesday          7            0       NA         NA
+139    2019     9  11 Wednesday          7           10       NA         NA
+140    2019     9  11 Wednesday          9            5       NA         NA
+141    2019     9  11 Wednesday          9           37       NA         NA
+142    2019     9  11 Wednesday         11            0       NA         NA
+143    2019     9  11 Wednesday         13            0       NA         NA
+144    2019     9  11 Wednesday         15            0       NA         NA
+145    2019     9  11 Wednesday          8           45       NA         NA
+146    2019     9  11 Wednesday         12           15       NA         NA
+147    2019     9  11 Wednesday         12           40       NA         NA
+148    2019     9  11 Wednesday         13           50       NA         NA
+149    2019     9  11 Wednesday          9           49       10         36
+150    2019     9  11 Wednesday         11           49       12          5
+151    2019     9  11 Wednesday         14           16       14         45
+152    2019     9  12  Thursday          6           40       NA         NA
+153    2019     9  12  Thursday          6           50       NA         NA
+154    2019     9  12  Thursday          8           45       NA         NA
+155    2019     9  12  Thursday         10           45       NA         NA
+156    2019     9  12  Thursday         13           12       NA         NA
+157    2019     9  12  Thursday         13           38       NA         NA
+158    2019     9  12  Thursday         14           18       NA         NA
+159    2019     9  12  Thursday         15           15       NA         NA
+160    2019     9  12  Thursday          8           50       NA         NA
+161    2019     9  12  Thursday         12            0       NA         NA
+162    2019     9  12  Thursday         13           15       NA         NA
+163    2019     9  12  Thursday          9            8        9         46
+164    2019     9  12  Thursday         12            7       13          5
+165    2019     9  13    Friday          6           37       NA         NA
+166    2019     9  13    Friday          6           55       NA         NA
+167    2019     9  13    Friday          9           20       NA         NA
+168    2019     9  13    Friday         11            0       NA         NA
+169    2019     9  13    Friday         12           47       NA         NA
+170    2019     9  13    Friday         14           17       NA         NA
+171    2019     9  13    Friday         15           46       NA         NA
+172    2019     9  13    Friday          8           10       NA         NA
+173    2019     9  13    Friday         11            0       NA         NA
+174    2019     9  13    Friday         13            0       NA         NA
+175    2019     9  13    Friday         13           10       NA         NA
+176    2019     9  13    Friday          8           22        9         17
+177    2019     9  13    Friday         11           45       12         15
+178    2019     9  16    Monday          7           10       NA         NA
+179    2019     9  16    Monday          7           20       NA         NA
+180    2019     9  16    Monday          7           55       NA         NA
+181    2019     9  16    Monday          8           52       NA         NA
+182    2019     9  16    Monday         11            0       NA         NA
+183    2019     9  16    Monday         12           58       NA         NA
+184    2019     9  16    Monday         15            0       NA         NA
+185    2019     9  16    Monday          9           35       NA         NA
+186    2019     9  16    Monday         10           55       NA         NA
+187    2019     9  16    Monday         13            0       NA         NA
+188    2019     9  16    Monday         15            0       NA         NA
+189    2019     9  16    Monday         12           15       12         53
+190    2019     9  18 Wednesday          7           30       NA         NA
+191    2019     9  18 Wednesday          9           24       NA         NA
+192    2019     9  18 Wednesday         11           10       NA         NA
+193    2019     9  18 Wednesday         13            0       NA         NA
+194    2019     9  18 Wednesday         13           10       NA         NA
+195    2019     9  18 Wednesday         15            0       NA         NA
+196    2019     9  18 Wednesday          8           20       NA         NA
+197    2019     9  18 Wednesday         10           30       NA         NA
+198    2019     9  18 Wednesday         12           30       NA         NA
+199    2019     9  18 Wednesday         14           30       NA         NA
+200    2019     9  18 Wednesday         10           40       11          2
+201    2019     9  18 Wednesday         14           35       14         45
+202    2019     9  20    Friday          7           15       NA         NA
+203    2019     9  20    Friday          9            0       NA         NA
+204    2019     9  20    Friday         11            0       NA         NA
+205    2019     9  20    Friday         13            0       NA         NA
+206    2019     9  20    Friday         14           17       NA         NA
+207    2019     9  20    Friday         14           47       NA         NA
+208    2019     9  20    Friday          8           30       NA         NA
+209    2019     9  20    Friday         11           30       NA         NA
+210    2019     9  20    Friday         13            0       NA         NA
+211    2019     9  20    Friday         15            0       NA         NA
+212    2019     9  20    Friday          9           40       10         23
+213    2019     9  20    Friday         13           21       14         14
+214    2019     9  20    Friday          6           45       NA         NA
+215    2019     9  22    Sunday         NA           NA       NA         NA
+216    2019     9  23    Monday          7           10       NA         NA
+217    2019     9  23    Monday          8            4       NA         NA
+218    2019     9  23    Monday         10            5       NA         NA
+219    2019     9  23    Monday         11           50       NA         NA
+220    2019     9  23    Monday         13           27       NA         NA
+221    2019     9  23    Monday         15           20       NA         NA
+222    2019     9  23    Monday          9           15       NA         NA
+223    2019     9  23    Monday         11           15       NA         NA
+224    2019     9  23    Monday         13           15       NA         NA
+225    2019     9  23    Monday         11           17       11         32
+226    2019     9  23    Monday          6           45       NA         NA
+227    2019     9  24   Tuesday          7           20       NA         NA
+228    2019     9  24   Tuesday          7           45       NA         NA
+229    2019     9  24   Tuesday          8           35       NA         NA
+230    2019     9  24   Tuesday         10           15       NA         NA
+231    2019     9  24   Tuesday         11           55       NA         NA
+232    2019     9  24   Tuesday         13           40       NA         NA
+233    2019     9  24   Tuesday          8           25       NA         NA
+234    2019     9  24   Tuesday         10           20       NA         NA
+235    2019     9  24   Tuesday         12           25       NA         NA
+236    2019     9  24   Tuesday         10           35       11         20
+237    2019     9  24   Tuesday         14           21       15          3
+238    2019     9  25 Wednesday         10           30       NA         NA
+239    2019     9  25 Wednesday          7            5       NA         NA
+240    2019     9  25 Wednesday          9           30       NA         NA
+241    2019     9  25 Wednesday         11           15       NA         NA
+242    2019     9  25 Wednesday          8           20       NA         NA
+243    2019     9  25 Wednesday          9           45       NA         NA
+244    2019     9  25 Wednesday          8           40        9         30
+245    2019     9  25 Wednesday         11           25       NA         NA
+246    2019     9  25 Wednesday         NA           NA       NA         NA
+247    2019     9  25 Wednesday         14           20       NA         NA
+248    2019     9  25 Wednesday         15           30       NA         NA
+249    2019     9  26  Thursday         18           NA       NA         NA
+250    2019     9  27    Friday          7            0       NA         NA
+251    2019     9  27    Friday          7           52       NA         NA
+252    2019     9  27    Friday         10           15       NA         NA
+253    2019     9  27    Friday         11           17       NA         NA
+254    2019     9  27    Friday         13           50       NA         NA
+255    2019     9  27    Friday         13           45       NA         NA
+256    2019     9  27    Friday          8           20       NA         NA
+257    2019     9  27    Friday         11           15       NA         NA
+258    2019     9  27    Friday         10           20       NA         NA
+259    2019     9  27    Friday          6           NA       NA         NA
+260    2019     9  27    Friday         18           NA       NA         NA
+261    2019     9  28  Saturday          6           NA       NA         NA
+262    2019     9  29    Sunday         NA           NA       NA         NA
+263    2019     9  29    Sunday          6           NA       NA         NA
+264    2019     9  29    Sunday         18           NA       NA         NA
+265    2019     9  30    Monday          7            5       NA         NA
+266    2019     9  30    Monday          9            2       NA         NA
+267    2019     9  30    Monday         10           35       NA         NA
+268    2019     9  30    Monday         12           38       NA         NA
+269    2019     9  30    Monday          9           10       NA         NA
+270    2019     9  30    Monday         11           30       NA         NA
+271    2019     9  30    Monday          9           36       10         10
+272    2019     9  30    Monday         13           11       NA         NA
+273    2019     9  30    Monday          6           35       NA         NA
+274    2019     9  30    Monday         13            5       NA         NA
+275    2019     9  30    Monday         NA           NA       NA         NA
+276    2019     9  30    Monday         NA           NA       NA         NA
+277    2019     9  30    Monday          6           NA       NA         NA
+278    2019     9  30    Monday         18           NA       NA         NA
+279    2019    10   1   Tuesday          7           55       NA         NA
+280    2019    10   1   Tuesday         10            5       NA         NA
+281    2019    10   1   Tuesday         12           37       NA         NA
+282    2019    10   1   Tuesday         14           40       NA         NA
+283    2019    10   1   Tuesday         14            3       NA         NA
+284    2019    10   1   Tuesday         14            3       NA         NA
+285    2019    10   1   Tuesday         NA           NA       NA         NA
+286    2019    10   1   Tuesday          6           NA       NA         NA
+287    2019    10   1   Tuesday         18           NA       NA         NA
+288    2019    10   2 Wednesday         12           50       NA         NA
+289    2019    10   2 Wednesday         14           20       NA         NA
+290    2019    10   2 Wednesday          7           17       NA         NA
+291    2019    10   2 Wednesday          8           30       NA         NA
+292    2019    10   2 Wednesday         11            7       NA         NA
+293    2019    10   2 Wednesday         12            0       NA         NA
+294    2019    10   2 Wednesday         14           10       NA         NA
+295    2019    10   2 Wednesday         15           10       NA         NA
+296    2019    10   2 Wednesday          8           10       NA         NA
+297    2019    10   2 Wednesday         10           15       NA         NA
+298    2019    10   2 Wednesday         12           40       NA         NA
+299    2019    10   2 Wednesday         14           44       NA         NA
+300    2019    10   2 Wednesday          8           57       10         14
+301    2019    10   2 Wednesday         13           23       14          0
+302    2019    10   2 Wednesday          6           NA       NA         NA
+303    2019    10   2 Wednesday         18           NA       NA         NA
+304    2019    10   3  Thursday          6           45       NA         NA
+305    2019    10   3  Thursday          8           10       NA         NA
+306    2019    10   3  Thursday         10           30       NA         NA
+307    2019    10   3  Thursday         11           20       NA         NA
+308    2019    10   3  Thursday         13            0       NA         NA
+309    2019    10   3  Thursday          8            0       NA         NA
+310    2019    10   3  Thursday         11            0       NA         NA
+311    2019    10   3  Thursday         12           40       NA         NA
+312    2019    10   3  Thursday         13           30       NA         NA
+313    2019    10   3  Thursday         13           45       NA         NA
+314    2019    10   3  Thursday         14           20       NA         NA
+315    2019    10   3  Thursday          9           10       10         25
+316    2019    10   3  Thursday         14           27       NA         NA
+317    2019    10   3  Thursday          6           NA       NA         NA
+318    2019    10   3  Thursday         18           NA       NA         NA
+319    2019    10   4    Friday          7           15       NA         NA
+320    2019    10   4    Friday          9           15       NA         NA
+321    2019    10   4    Friday         10           22       NA         NA
+322    2019    10   4    Friday         12           34       NA         NA
+323    2019    10   4    Friday         13            6       NA         NA
+324    2019    10   4    Friday          9           17       NA         NA
+325    2019    10   4    Friday         10           48       NA         NA
+326    2019    10   4    Friday         13           16       NA         NA
+327    2019    10   4    Friday          7           52        9         10
+328    2019    10   4    Friday         14            9       15         20
+329    2019    10   4    Friday          6           43       NA         NA
+330    2019    10   4    Friday          6           NA       NA         NA
+331    2019    10   4    Friday         18           NA       NA         NA
+332    2019    10   4    Friday         NA           NA       NA         NA
+333    2019    10   5  Saturday          6           NA       NA         NA
+334    2019    10   5  Saturday         18           NA       NA         NA
+335    2019    10   7    Monday         NA           NA       NA         NA
+336    2019    10   7    Monday          8           20       NA         NA
+337    2019    10   7    Monday          6           50       NA         NA
+338    2019    10   7    Monday          8           20       NA         NA
+339    2019    10   7    Monday         10           25       NA         NA
+340    2019    10   7    Monday         12           35       NA         NA
+341    2019    10   7    Monday         14           32       NA         NA
+342    2019    10   7    Monday          8            0       NA         NA
+343    2019    10   7    Monday         11            0       NA         NA
+344    2019    10   7    Monday         14            0       NA         NA
+345    2019    10   7    Monday          9           10        9         43
+346    2019    10   7    Monday         12           28       13         22
+347    2019    10   8   Tuesday          7           45       NA         NA
+348    2019    10   8   Tuesday         10            5       NA         NA
+349    2019    10   8   Tuesday         11           50       NA         NA
+350    2019    10   8   Tuesday         13           40       NA         NA
+351    2019    10   8   Tuesday          7           40       NA         NA
+352    2019    10   8   Tuesday          9           20       NA         NA
+353    2019    10   8   Tuesday         11           55       NA         NA
+354    2019    10   8   Tuesday         13            0       NA         NA
+355    2019    10   8   Tuesday          9           23       10          0
+356    2019    10   8   Tuesday         12           15       12         40
+357    2019    10   8   Tuesday         14           45       15         10
+358    2019    10   9 Wednesday          8            4       NA         NA
+359    2019    10   9 Wednesday         10           58       NA         NA
+360    2019    10   9 Wednesday         12           45       NA         NA
+361    2019    10   9 Wednesday         14           30       NA         NA
+362    2019    10   9 Wednesday         15            0       NA         NA
+363    2019    10   9 Wednesday          8           30       NA         NA
+364    2019    10   9 Wednesday         11           12       NA         NA
+365    2019    10   9 Wednesday         13            0       NA         NA
+366    2019    10   9 Wednesday          9           20       10         55
+367    2019    10   9 Wednesday         13           15       NA         NA
+368    2019    10  10  Thursday          7           55       NA         NA
+369    2019    10  10  Thursday          9           45       NA         NA
+370    2019    10  10  Thursday         12           10       NA         NA
+371    2019    10  10  Thursday          8           25       NA         NA
+372    2019    10  10  Thursday         11           20       NA         NA
+373    2019    10  10  Thursday         13           10       NA         NA
+374    2019    10  10  Thursday          9           18        9         40
+375    2019    10  10  Thursday         13           20       NA         NA
+376    2019    10  14    Monday         NA           NA       NA         NA
+377    2019    10  14    Monday         NA           NA       NA         NA
+378    2019    10  15   Tuesday          6           50       NA         NA
+379    2019    10  15   Tuesday          7           50       NA         NA
+380    2019    10  15   Tuesday         10            5       NA         NA
+381    2019    10  15   Tuesday         12           20       NA         NA
+382    2019    10  15   Tuesday         14           10       NA         NA
+383    2019    10  15   Tuesday          8            0       NA         NA
+384    2019    10  15   Tuesday         10           35       NA         NA
+385    2019    10  15   Tuesday         12           45       NA         NA
+386    2019    10  15   Tuesday         14           15       NA         NA
+387    2019    10  15   Tuesday          9           30       10          0
+388    2019    10  15   Tuesday         11           35       12         15
+389    2019    10  16 Wednesday          7           10       NA         NA
+390    2019    10  16 Wednesday          8            5       NA         NA
+391    2019    10  16 Wednesday         10            0       NA         NA
+392    2019    10  16 Wednesday         11           35       NA         NA
+393    2019    10  16 Wednesday         13           15       NA         NA
+394    2019    10  16 Wednesday          8            0       NA         NA
+395    2019    10  16 Wednesday         10           40       NA         NA
+396    2019    10  16 Wednesday         13           20       NA         NA
+397    2019    10  16 Wednesday          9            5        9         45
+398    2019    10  16 Wednesday         13           30       14         10
+399    2019    10  17  Thursday          7           50       NA         NA
+400    2019    10  17  Thursday          8           30       NA         NA
+401    2019    10  17  Thursday          9           55       NA         NA
+402    2019    10  17  Thursday         11           53       NA         NA
+403    2019    10  17  Thursday         13           41       NA         NA
+404    2019    10  17  Thursday         15           15       NA         NA
+405    2019    10  17  Thursday          9           21        9         52
+406    2019    10  17  Thursday         14           12       14         45
+407    2019    10  17  Thursday          9            8       NA         NA
+408    2019    10  17  Thursday         11            5       NA         NA
+409    2019    10  17  Thursday         12           10       NA         NA
+410    2019    10  17  Thursday         14            0       NA         NA
+411    2019    10  18    Friday          7           50       NA         NA
+412    2019    10  18    Friday         10            0       NA         NA
+413    2019    10  18    Friday         12           20       NA         NA
+414    2019    10  18    Friday         14           25       NA         NA
+415    2019    10  18    Friday          8           20       NA         NA
+416    2019    10  18    Friday         10           40       NA         NA
+417    2019    10  18    Friday         12           30       NA         NA
+418    2019    10  18    Friday         14           53       NA         NA
+419    2019    10  18    Friday          9           10        9         58
+420    2019    10  18    Friday         13            1       13         30
+421    2019    10  21    Monday          7           26       NA         NA
+422    2019    10  21    Monday          9           15       NA         NA
+423    2019    10  21    Monday         11           10       NA         NA
+424    2019    10  21    Monday         13           33       NA         NA
+425    2019    10  21    Monday         13           42       NA         NA
+426    2019    10  21    Monday          8           NA       NA         NA
+427    2019    10  21    Monday          8            1       NA         NA
+428    2019    10  21    Monday          9            0       NA         NA
+429    2019    10  21    Monday         11           45       NA         NA
+430    2019    10  21    Monday         14           15       NA         NA
+431    2019    10  21    Monday          9           27       10          0
+432    2019    10  21    Monday         13            0       13         30
+433    2019    10  21    Monday         NA           NA       NA         NA
+434    2019    10  22   Tuesday          7            0       NA         NA
+435    2019    10  22   Tuesday          8            5       NA         NA
+436    2019    10  22   Tuesday         10           35       NA         NA
+437    2019    10  22   Tuesday         12            0       NA         NA
+438    2019    10  22   Tuesday         13           30       NA         NA
+439    2019    10  22   Tuesday         14           45       NA         NA
+440    2019    10  22   Tuesday          8            0       NA         NA
+441    2019    10  22   Tuesday         10           40       NA         NA
+442    2019    10  22   Tuesday         13            0       NA         NA
+443    2019    10  22   Tuesday          9           17       10         30
+444    2019    10  22   Tuesday         13           10       13         25
+445    2019    10  22   Tuesday         19            0       NA         NA
+446    2019    10  23 Wednesday         NA           NA       NA         NA
+447    2019    10  23 Wednesday          7           35       NA         NA
+448    2019    10  23 Wednesday          9            0       NA         NA
+449    2019    10  23 Wednesday         10           45       NA         NA
+450    2019    10  23 Wednesday         13            0       NA         NA
+451    2019    10  23 Wednesday         14           50       NA         NA
+452    2019    10  23 Wednesday          8            0       NA         NA
+453    2019    10  23 Wednesday          8           45       NA         NA
+454    2019    10  23 Wednesday         10           15       NA         NA
+455    2019    10  23 Wednesday         11           10       NA         NA
+456    2019    10  23 Wednesday         13           45       NA         NA
+457    2019    10  23 Wednesday          9            0        9         45
+458    2019    10  23 Wednesday         11           32       12         55
+459    2019    10  24  Thursday          7           30       NA         NA
+460    2019    10  24  Thursday          8           15       NA         NA
+461    2019    10  24  Thursday         10           15       NA         NA
+462    2019    10  24  Thursday         12           40       NA         NA
+463    2019    10  24  Thursday         14           40       NA         NA
+464    2019    10  24  Thursday          8            5       NA         NA
+465    2019    10  24  Thursday         10           15       NA         NA
+466    2019    10  24  Thursday         13           10       NA         NA
+467    2019    10  24  Thursday         13           45       NA         NA
+468    2019    10  24  Thursday         14           30       NA         NA
+469    2019    10  24  Thursday         15           50       NA         NA
+470    2019    10  24  Thursday          8           45        9         15
+471    2019    10  24  Thursday         11           10       12         40
+472    2019    10  25    Friday          7           15       NA         NA
+473    2019    10  25    Friday          8           15       NA         NA
+474    2019    10  25    Friday         10           10       NA         NA
+475    2019    10  25    Friday         12           17       NA         NA
+476    2019    10  25    Friday         14           15       NA         NA
+477    2019    10  25    Friday         16           30       NA         NA
+478    2019    10  25    Friday          8            0       NA         NA
+479    2019    10  25    Friday          9           15       NA         NA
+480    2019    10  25    Friday         11            0       NA         NA
+481    2019    10  25    Friday         12           45       NA         NA
+482    2019    10  25    Friday         14           15       NA         NA
+483    2019    10  25    Friday         15            0       NA         NA
+484    2019    10  25    Friday         11           40       12         14
+485    2019    10  25    Friday         15           10       NA         NA
+486    2019    10  25    Friday          8           30       NA         NA
+487    2019    10  28    Monday          7            5       NA         NA
+488    2019    10  28    Monday          7           50       NA         NA
+489    2019    10  28    Monday          9           25       NA         NA
+490    2019    10  28    Monday         11           45       NA         NA
+491    2019    10  28    Monday         13           48       NA         NA
+492    2019    10  28    Monday         15            5       NA         NA
+493    2019    10  28    Monday          8           45       NA         NA
+494    2019    10  28    Monday          9           25       NA         NA
+495    2019    10  28    Monday         10           45       NA         NA
+496    2019    10  28    Monday         11           45       NA         NA
+497    2019    10  28    Monday         13           25       NA         NA
+498    2019    10  28    Monday         15            0       NA         NA
+499    2019    10  28    Monday         10           53       11         45
+500    2019    10  28    Monday         12           19       12         30
+501    2019    10  29   Tuesday          7           45       NA         NA
+502    2019    10  29   Tuesday          9           45       NA         NA
+503    2019    10  29   Tuesday         11           30       NA         NA
+504    2019    10  29   Tuesday         14           10       NA         NA
+505    2019    10  29   Tuesday         15           15       NA         NA
+506    2019    10  29   Tuesday          8            0       NA         NA
+507    2019    10  29   Tuesday          8           50       NA         NA
+508    2019    10  29   Tuesday         10           20       NA         NA
+509    2019    10  29   Tuesday         12            5       NA         NA
+510    2019    10  29   Tuesday         13           20       NA         NA
+511    2019    10  29   Tuesday         14           55       NA         NA
+512    2019    10  29   Tuesday         10           29       11         30
+513    2019    10  29   Tuesday         13           29       14          5
+514    2019    10  29   Tuesday         10           15       NA         NA
+515    2019    10  29   Tuesday         14           30       NA         NA
+516    2019    10  30 Wednesday          7            5       NA         NA
+517    2019    10  30 Wednesday          7           50       NA         NA
+518    2019    10  30 Wednesday         10            0       NA         NA
+519    2019    10  30 Wednesday         12           20       NA         NA
+520    2019    10  30 Wednesday         13           50       NA         NA
+521    2019    10  30 Wednesday         15           13       NA         NA
+522    2019    10  30 Wednesday          8           20       NA         NA
+523    2019    10  30 Wednesday          8           45       NA         NA
+524    2019    10  30 Wednesday         10           30       NA         NA
+525    2019    10  30 Wednesday         11           45       NA         NA
+526    2019    10  30 Wednesday         12           45       NA         NA
+527    2019    10  30 Wednesday         13           45       NA         NA
+528    2019    10  30 Wednesday         14           15       NA         NA
+529    2019    10  30 Wednesday         10           15       NA         NA
+530    2019    10  30 Wednesday         13            0       NA         NA
+531    2019    10  30 Wednesday          9            7        9         45
+532    2019    10  30 Wednesday         11           40       12          0
+533    2019    10  31  Thursday          7           10       NA         NA
+534    2019    10  31  Thursday          9            0       NA         NA
+535    2019    10  31  Thursday         11            0       NA         NA
+536    2019    10  31  Thursday         13           10       NA         NA
+537    2019    10  31  Thursday         14           50       NA         NA
+538    2019    10  31  Thursday          9           20       NA         NA
+539    2019    10  31  Thursday         10            0       NA         NA
+540    2019    10  31  Thursday         11           55       NA         NA
+541    2019    10  31  Thursday         13           45       NA         NA
+542    2019    10  31  Thursday         10           40       NA         NA
+543    2019    10  31  Thursday         14           10       NA         NA
+544    2019    10  31  Thursday         12            5       13          5
+545    2019    11   1    Friday          8           10       NA         NA
+546    2019    11   1    Friday         10           15       NA         NA
+547    2019    11   1    Friday         12            1       NA         NA
+548    2019    11   1    Friday         14            0       NA         NA
+549    2019    11   1    Friday         15           10       NA         NA
+550    2019    11   1    Friday          8           15       NA         NA
+551    2019    11   1    Friday          9           30       NA         NA
+552    2019    11   1    Friday         12            5       NA         NA
+553    2019    11   1    Friday         13           30       NA         NA
+554    2019    11   1    Friday          9           47       10          2
+555    2019    11   1    Friday         12           17       13         18
+556    2019    11   1    Friday         11            0       NA         NA
+557    2019    11   1    Friday         14           25       NA         NA
+558    2019    11   1    Friday          8           30       NA         NA
+559    2019    11   4    Monday          7           16       NA         NA
+560    2019    11   4    Monday          8            0       NA         NA
+561    2019    11   4    Monday          8           30       NA         NA
+562    2019    11   4    Monday          9           10       NA         NA
+563    2019    11   4    Monday         10           43       NA         NA
+564    2019    11   4    Monday         12           20       NA         NA
+565    2019    11   4    Monday         14           31       NA         NA
+566    2019    11   4    Monday          8           30       NA         NA
+567    2019    11   4    Monday         10           50       NA         NA
+568    2019    11   4    Monday         13           20       NA         NA
+569    2019    11   4    Monday         14           45       NA         NA
+570    2019    11   4    Monday          9           20       10         40
+571    2019    11   5   Tuesday          8            0       NA         NA
+572    2019    11   5   Tuesday         11           15       NA         NA
+573    2019    11   5   Tuesday         12           40       NA         NA
+574    2019    11   5   Tuesday         13           45       NA         NA
+575    2019    11   5   Tuesday         15            5       NA         NA
+576    2019    11   5   Tuesday          9           53       11          7
+577    2019    11   5   Tuesday         13           57       NA         NA
+578    2019    11   5   Tuesday         11           20       NA         NA
+579    2019    11   5   Tuesday         14            0       NA         NA
+580    2019    11   5   Tuesday          8           20       NA         NA
+581    2019    11   5   Tuesday          9           48       NA         NA
+582    2019    11   5   Tuesday         11           45       NA         NA
+583    2019    11   5   Tuesday         13           30       NA         NA
+584    2019    11   6 Wednesday          8            0       NA         NA
+585    2019    11   6 Wednesday          9           55       NA         NA
+586    2019    11   6 Wednesday         11           25       NA         NA
+587    2019    11   6 Wednesday         13           20       NA         NA
+588    2019    11   6 Wednesday          8           20       NA         NA
+589    2019    11   6 Wednesday         10            0       NA         NA
+590    2019    11   6 Wednesday         11           30       NA         NA
+591    2019    11   6 Wednesday         13           45       NA         NA
+592    2019    11   6 Wednesday          8           33        9          3
+593    2019    11   6 Wednesday         10           20       NA         NA
+594    2019    11   6 Wednesday         10           20       NA         NA
+595    2019    11   6 Wednesday         14           15       NA         NA
+596    2019    11   7  Thursday          7           35       NA         NA
+597    2019    11   7  Thursday          9           26       NA         NA
+598    2019    11   7  Thursday         11            0       NA         NA
+599    2019    11   7  Thursday         12           45       NA         NA
+600    2019    11   7  Thursday         15            5       NA         NA
+601    2019    11   7  Thursday          7           55       NA         NA
+602    2019    11   7  Thursday          9           32       NA         NA
+603    2019    11   7  Thursday         11            0       NA         NA
+604    2019    11   7  Thursday         11           40       NA         NA
+605    2019    11   7  Thursday         13           15       NA         NA
+606    2019    11   7  Thursday          9           35       10         11
+607    2019    11   7  Thursday         13           55       15          0
+608    2019    11   7  Thursday         10           25       NA         NA
+609    2019    11   7  Thursday         13           20       NA         NA
+610    2019    11   7  Thursday         12           20       NA         NA
+611    2019    11   7  Thursday         12           50       NA         NA
+612    2019    11   8    Friday          8            5       NA         NA
+613    2019    11   8    Friday          9           48       NA         NA
+614    2019    11   8    Friday         11           45       NA         NA
+615    2019    11   8    Friday         12           17       NA         NA
+616    2019    11   8    Friday         13           45       NA         NA
+617    2019    11   8    Friday          8           30       NA         NA
+618    2019    11   8    Friday         11           13       11         32
+619    2019    11   8    Friday          8           50       NA         NA
+620    2019    11   8    Friday         11            0       NA         NA
+621    2019    11   8    Friday         11           45       NA         NA
+622    2019    11   8    Friday          3           12       NA         NA
+623    2019    11   8    Friday          3           12       NA         NA
+624    2019    11   9  Saturday         NA           NA       NA         NA
+625    2019    11  10    Sunday         NA           NA       NA         NA
+626    2019    11  12   Tuesday          7           55       NA         NA
+627    2019    11  12   Tuesday          8           30       NA         NA
+628    2019    11  12   Tuesday         10           30       NA         NA
+629    2019    11  12   Tuesday         13           15       NA         NA
+630    2019    11  12   Tuesday         13           55       NA         NA
+631    2019    11  12   Tuesday         11            5       NA         NA
+632    2019    11  12   Tuesday         14           30       NA         NA
+633    2019    11  12   Tuesday         11           30       13          1
+634    2019    11  12   Tuesday         10           45       NA         NA
+635    2019    11  12   Tuesday         15            0       NA         NA
+636    2019    11  12   Tuesday          6            0       NA         NA
+637    2019    11  12   Tuesday         18            0       NA         NA
+638    2019    11  13 Wednesday          9            0       NA         NA
+639    2019    11  13 Wednesday         10           45       NA         NA
+640    2019    11  13 Wednesday         12           50       NA         NA
+641    2019    11  13 Wednesday         15            0       NA         NA
+642    2019    11  13 Wednesday         11           30       NA         NA
+643    2019    11  13 Wednesday         13            0       NA         NA
+644    2019    11  13 Wednesday         11           45       12         20
+645    2019    11  13 Wednesday         11            0       NA         NA
+646    2019    11  13 Wednesday         14           15       NA         NA
+647    2019    11  13 Wednesday          6            0       NA         NA
+648    2019    11  13 Wednesday         18            0       NA         NA
+649    2019    11  14  Thursday          7           35       NA         NA
+650    2019    11  14  Thursday          8           25       NA         NA
+651    2019    11  14  Thursday         11           30       NA         NA
+652    2019    11  14  Thursday         13           20       NA         NA
+653    2019    11  14  Thursday         15            3       NA         NA
+654    2019    11  14  Thursday          8           20       NA         NA
+655    2019    11  14  Thursday         11           30       NA         NA
+656    2019    11  14  Thursday         14            5       NA         NA
+657    2019    11  14  Thursday         12           30       NA         NA
+658    2019    11  14  Thursday         14           30       NA         NA
+659    2019    11  14  Thursday          9           17       11         25
+660    2019    11  14  Thursday          6            0       NA         NA
+661    2019    11  14  Thursday         18            0       NA         NA
+662    2019    11  15    Friday          6            0       NA         NA
+663    2019    11  15    Friday         18            0       NA         NA
+664    2019    11  15    Friday          7            0       NA         NA
+665    2019    11  15    Friday          9            0       NA         NA
+666    2019    11  15    Friday         11           21       NA         NA
+667    2019    11  15    Friday         13           16       NA         NA
+668    2019    11  15    Friday         15           15       NA         NA
+669    2019    11  15    Friday          8           18       NA         NA
+670    2019    11  15    Friday          9           15       NA         NA
+671    2019    11  15    Friday         11           15       NA         NA
+672    2019    11  15    Friday         13           30       NA         NA
+673    2019    11  15    Friday         14           15       NA         NA
+674    2019    11  15    Friday         11           30       12         12
+675    2019    11  15    Friday         11            0       NA         NA
+676    2019    11  15    Friday         14            0       NA         NA
+677    2019    11  15    Friday          8           15       NA         NA
+678    2019    11  18    Monday          6            0       NA         NA
+679    2019    11  18    Monday          8           38       NA         NA
+680    2019    11  18    Monday         10           36       NA         NA
+681    2019    11  18    Monday         12           38       NA         NA
+682    2019    11  18    Monday         12           57       NA         NA
+683    2019    11  18    Monday         15            0       NA         NA
+684    2019    11  18    Monday          9            0       NA         NA
+685    2019    11  18    Monday         11           30       NA         NA
+686    2019    11  18    Monday         13            0       NA         NA
+687    2019    11  18    Monday         15            0       NA         NA
+688    2019    11  18    Monday         11            0       NA         NA
+689    2019    11  18    Monday         14           25       NA         NA
+690    2019    11  18    Monday         11           30       11         59
+691    2019    11  18    Monday         13           13       13         58
+692    2019    11  19   Tuesday          7           40       NA         NA
+693    2019    11  19   Tuesday          9           45       NA         NA
+694    2019    11  19   Tuesday         12           20       NA         NA
+695    2019    11  19   Tuesday         14           15       NA         NA
+696    2019    11  19   Tuesday          8           40       NA         NA
+697    2019    11  19   Tuesday         10           30       NA         NA
+698    2019    11  19   Tuesday         12           35       NA         NA
+699    2019    11  19   Tuesday         14           20       NA         NA
+700    2019    11  19   Tuesday          8            0       NA         NA
+701    2019    11  19   Tuesday         10           15       NA         NA
+702    2019    11  19   Tuesday         14            0       NA         NA
+703    2019    11  19   Tuesday         10           45       12          0
+704    2019    11  20 Wednesday          7           30       NA         NA
+705    2019    11  20 Wednesday          9           15       NA         NA
+706    2019    11  20 Wednesday         12            5       NA         NA
+707    2019    11  20 Wednesday         13           30       NA         NA
+708    2019    11  20 Wednesday         15            0       NA         NA
+709    2019    11  20 Wednesday          8           30       NA         NA
+710    2019    11  20 Wednesday         10           30       NA         NA
+711    2019    11  20 Wednesday         12           20       NA         NA
+712    2019    11  20 Wednesday         14           50       NA         NA
+713    2019    11  20 Wednesday          8           10       NA         NA
+714    2019    11  20 Wednesday         10           15       NA         NA
+715    2019    11  20 Wednesday         13           45       NA         NA
+716    2019    11  20 Wednesday         10           47       12          2
+717    2019    11  21  Thursday          8           40        8         47
+718    2019    11  21  Thursday          7           15       NA         NA
+719    2019    11  21  Thursday         10           15       11         45
+720    2019    11  21  Thursday         11           40       NA         NA
+721    2019    11  21  Thursday         11           40       NA         NA
+722    2019    12   3   Tuesday          8           50       NA         NA
+723    2019    12   3   Tuesday          9           30       NA         NA
+724    2019    12   3   Tuesday         11           30       NA         NA
+725    2019    12   3   Tuesday         13           20       NA         NA
+726    2019    12   3   Tuesday         15            7       NA         NA
+727    2019    12   3   Tuesday          9            0       NA         NA
+728    2019    12   3   Tuesday         11            0       NA         NA
+729    2019    12   3   Tuesday         13           24       NA         NA
+730    2019    12   3   Tuesday         14           35       NA         NA
+731    2019    12   3   Tuesday         13           50       14         30
+732    2019    12   3   Tuesday         10           45       NA         NA
+733    2019    12   3   Tuesday         14           35       NA         NA
+734    2019    12   3   Tuesday          7           13       NA         NA
+735    2019    12   4 Wednesday          8           10       NA         NA
+736    2019    12   4 Wednesday          9           35       NA         NA
+737    2019    12   4 Wednesday         11           15       NA         NA
+738    2019    12   4 Wednesday         12           45       NA         NA
+739    2019    12   4 Wednesday         14           40       NA         NA
+740    2019    12   4 Wednesday          8           30       NA         NA
+741    2019    12   4 Wednesday         10            0       NA         NA
+742    2019    12   4 Wednesday         11           20       NA         NA
+743    2019    12   4 Wednesday         12           50       NA         NA
+744    2019    12   4 Wednesday          8            0       NA         NA
+745    2019    12   4 Wednesday         11            0       NA         NA
+746    2019    12   4 Wednesday         14           10       NA         NA
+747    2019    12   4 Wednesday         12            0       12         40
+748    2019    12   4 Wednesday         14           30       NA         NA
+749    2019    12   5  Thursday          7           45       NA         NA
+750    2019    12   5  Thursday          9           20       NA         NA
+751    2019    12   5  Thursday         12           15       NA         NA
+752    2019    12   5  Thursday         14           25       NA         NA
+753    2019    12   5  Thursday          8            5       NA         NA
+754    2019    12   5  Thursday          9           45       NA         NA
+755    2019    12   5  Thursday         12           20       NA         NA
+756    2019    12   5  Thursday         14           30       NA         NA
+757    2019    12   5  Thursday         10           45       12         10
+758    2019    12   5  Thursday          8            0       NA         NA
+759    2019    12   5  Thursday         10           20       NA         NA
+760    2019    12   5  Thursday         14           10       NA         NA
+761    2019    12   7  Saturday         12           55       NA         NA
+762    2019    12   9    Monday          7           45       NA         NA
+763    2019    12   9    Monday          9           30       NA         NA
+764    2019    12   9    Monday         12           20       NA         NA
+765    2019    12   9    Monday         14           20       NA         NA
+766    2019    12   9    Monday         11            5       12         12
+767    2019    12   9    Monday          9           55       NA         NA
+768    2019    12   9    Monday         10           45       NA         NA
+769    2019    12   9    Monday         13            0       NA         NA
+770    2019    12   9    Monday         14           25       NA         NA
+771    2019    12   9    Monday          8            0       NA         NA
+772    2019    12   9    Monday         10           30       NA         NA
+773    2019    12   9    Monday         14           10       NA         NA
+774    2019    12  10   Tuesday          8            0       NA         NA
+775    2019    12  10   Tuesday          9           50       NA         NA
+776    2019    12  10   Tuesday         11           30       NA         NA
+777    2019    12  10   Tuesday         13           45       NA         NA
+778    2019    12  10   Tuesday         15           20       NA         NA
+779    2019    12  10   Tuesday          9           25       NA         NA
+780    2019    12  10   Tuesday         11           15       NA         NA
+781    2019    12  10   Tuesday         14           40       NA         NA
+782    2019    12  10   Tuesday         10           10       11          0
+783    2019    12  10   Tuesday          8           20       NA         NA
+784    2019    12  10   Tuesday         11           20       NA         NA
+785    2019    12  10   Tuesday         14           20       NA         NA
+786    2019    12  11 Wednesday          7           30       NA         NA
+787    2019    12  11 Wednesday          9           30       NA         NA
+788    2019    12  11 Wednesday         11           35       NA         NA
+789    2019    12  11 Wednesday         14           18       NA         NA
+790    2019    12  11 Wednesday          8           30       NA         NA
+791    2019    12  11 Wednesday         10            7       NA         NA
+792    2019    12  11 Wednesday         14            5       NA         NA
+793    2019    12  11 Wednesday         14           48       NA         NA
+794    2019    12  11 Wednesday         10           35       11         32
+795    2019    12  11 Wednesday          8            0       NA         NA
+796    2019    12  11 Wednesday         11           40       NA         NA
+797    2019    12  11 Wednesday         14            0       NA         NA
+798    2019    12  12  Thursday          7           40       NA         NA
+799    2019    12  12  Thursday          9           50       NA         NA
+800    2019    12  12  Thursday         11           30       NA         NA
+801    2019    12  12  Thursday         13           20       NA         NA
+802    2019    12  12  Thursday         15            0       NA         NA
+803    2019    12  12  Thursday          9           55       NA         NA
+804    2019    12  12  Thursday         10           25       NA         NA
+805    2019    12  12  Thursday         13           10       NA         NA
+806    2019    12  12  Thursday         14           57       NA         NA
+807    2019    12  12  Thursday         10           30       11         20
+808    2019    12  12  Thursday          8           15       NA         NA
+809    2019    12  12  Thursday         12           15       NA         NA
+810    2019    12  12  Thursday         14            0       NA         NA
+811    2019    12  13    Friday          7            0       NA         NA
+812    2019    12  13    Friday          9           30       NA         NA
+813    2019    12  13    Friday         10           25       NA         NA
+814    2019    12  13    Friday         12           55       NA         NA
+815    2019    12  13    Friday         14           55       NA         NA
+816    2019    12  13    Friday          8            0       NA         NA
+817    2019    12  13    Friday         10           45       NA         NA
+818    2019    12  13    Friday         13           30       NA         NA
+819    2019    12  13    Friday         14           30       NA         NA
+820    2019    12  13    Friday         11            0       12         49
+821    2019    12  13    Friday         10           50       NA         NA
+822    2019    12  13    Friday         14            0       NA         NA
+823    2019    12  17   Tuesday          7           30       NA         NA
+824    2019    12  17   Tuesday          9           15       NA         NA
+825    2019    12  17   Tuesday         12           23       NA         NA
+826    2019    12  17   Tuesday         14           15       NA         NA
+827    2019    12  17   Tuesday         10           40       NA         NA
+828    2019    12  17   Tuesday         13           45       NA         NA
+829    2019    12  17   Tuesday         11            5       12         20
+830    2019    12  17   Tuesday          8            0       NA         NA
+831    2019    12  17   Tuesday         10           30       NA         NA
+832    2019    12  17   Tuesday         14            0       NA         NA
+833    2019    12  18 Wednesday          8            0       NA         NA
+834    2019    12  18 Wednesday         10            5       NA         NA
+835    2019    12  18 Wednesday         12           25       NA         NA
+836    2019    12  18 Wednesday         14           25       NA         NA
+837    2019    12  18 Wednesday         15           22       NA         NA
+838    2019    12  18 Wednesday          9           55       NA         NA
+839    2019    12  18 Wednesday         11            5       NA         NA
+840    2019    12  18 Wednesday         13            0       NA         NA
+841    2019    12  18 Wednesday         11           10       12         15
+842    2019    12  18 Wednesday          7           50       NA         NA
+843    2019    12  18 Wednesday         10           30       NA         NA
+844    2019    12  18 Wednesday         14            0       NA         NA
+845    2019    12  19  Thursday          8           10       NA         NA
+846    2019    12  19  Thursday         10            5       NA         NA
+847    2019    12  19  Thursday         13            7       NA         NA
+848    2019    12  19  Thursday         15            0       NA         NA
+849    2019    12  19  Thursday          8           55       NA         NA
+850    2019    12  19  Thursday         13           13       NA         NA
+851    2019    12  19  Thursday         13           40       NA         NA
+852    2019    12  19  Thursday          7           50       NA         NA
+853    2019    12  19  Thursday         10           20       NA         NA
+854    2019    12  19  Thursday         14           30       NA         NA
+855    2019    12  19  Thursday         11           28       13          5
+856    2020     1   6    Monday          7           14       NA         NA
+857    2020     1   6    Monday          9            0       NA         NA
+858    2020     1   6    Monday         12           30       NA         NA
+859    2020     1   6    Monday         14           20       NA         NA
+860    2020     1   6    Monday          9           10       NA         NA
+861    2020     1   6    Monday         13           25       NA         NA
+862    2020     1   6    Monday         11           10       12         17
+863    2020     1   6    Monday          8            0       NA         NA
+864    2020     1   6    Monday         10           45       NA         NA
+865    2020     1   6    Monday         13           45       NA         NA
+866    2020     1   8 Wednesday         10           10       NA         NA
+867    2020     1   8 Wednesday         12           30       NA         NA
+868    2020     1   8 Wednesday         14           25       NA         NA
+869    2020     1   8 Wednesday         11            5       NA         NA
+870    2020     1   8 Wednesday         13           15       NA         NA
+871    2020     1   8 Wednesday         11           15       12         30
+872    2020     1   8 Wednesday         10           30       NA         NA
+873    2020     1   8 Wednesday         14           10       NA         NA
+874    2020     1   9  Thursday          7            5       NA         NA
+875    2020     1   9  Thursday          8           30       NA         NA
+876    2020     1   9  Thursday         10           20       NA         NA
+877    2020     1   9  Thursday         12           45       NA         NA
+878    2020     1   9  Thursday         14           30       NA         NA
+879    2020     1   9  Thursday          9           35       NA         NA
+880    2020     1   9  Thursday         11            0       NA         NA
+881    2020     1   9  Thursday         12           55       NA         NA
+882    2020     1   9  Thursday          8           10       NA         NA
+883    2020     1   9  Thursday         10           40       NA         NA
+884    2020     1   9  Thursday         14            5       NA         NA
+885    2020     1   9  Thursday         11           10       11         45
+886    2020     1  10    Friday          8           30       NA         NA
+887    2020     1  10    Friday          9           15       NA         NA
+888    2020     1  10    Friday         12           50       NA         NA
+889    2020     1  10    Friday          9            0       NA         NA
+890    2020     1  10    Friday         11           20       NA         NA
+891    2020     1  10    Friday          8            0       NA         NA
+892    2020     1  10    Friday         11            5       NA         NA
+893    2020     1  10    Friday         14           10       NA         NA
+894    2020     1  10    Friday         11           25       12         30
+895    2020     1  13    Monday          7           45       NA         NA
+896    2020     1  13    Monday          9           55       NA         NA
+897    2020     1  13    Monday         12           25       NA         NA
+898    2020     1  13    Monday         13           50       NA         NA
+899    2020     1  13    Monday         11            7       12         20
+900    2020     1  13    Monday         11            5       NA         NA
+901    2020     1  13    Monday         14            0       NA         NA
+902    2020     1  13    Monday          8           15       NA         NA
+903    2020     1  13    Monday         10           50       NA         NA
+904    2020     1  13    Monday         14            5       NA         NA
+905    2020     1  14   Tuesday          8           10       NA         NA
+906    2020     1  14   Tuesday         10           10       NA         NA
+907    2020     1  14   Tuesday         12            0       NA         NA
+908    2020     1  14   Tuesday         14           30       NA         NA
+909    2020     1  14   Tuesday          9           15       NA         NA
+910    2020     1  14   Tuesday         13           10       NA         NA
+911    2020     1  14   Tuesday         10           27       11         30
+912    2020     1  14   Tuesday          8           40       NA         NA
+913    2020     1  14   Tuesday         11           30       NA         NA
+914    2020     1  14   Tuesday         14           15       NA         NA
+915    2020     1  15 Wednesday          8           30       NA         NA
+916    2020     1  15 Wednesday         10            6       NA         NA
+917    2020     1  15 Wednesday         12           12       NA         NA
+918    2020     1  15 Wednesday         14            0       NA         NA
+919    2020     1  15 Wednesday         11            7       12          9
+920    2020     1  15 Wednesday          9           10       NA         NA
+921    2020     1  15 Wednesday         11            0       NA         NA
+922    2020     1  15 Wednesday         13            0       NA         NA
+923    2020     1  15 Wednesday          8           10       NA         NA
+924    2020     1  15 Wednesday         10           50       NA         NA
+925    2020     1  15 Wednesday         13           55       NA         NA
+926    2020     1  16  Thursday          7            2       NA         NA
+927    2020     1  16  Thursday          8           30       NA         NA
+928    2020     1  16  Thursday         10           30       NA         NA
+929    2020     1  16  Thursday         12           20       NA         NA
+930    2020     1  16  Thursday         14            6       NA         NA
+931    2020     1  16  Thursday          9           30       NA         NA
+932    2020     1  16  Thursday         14           20       NA         NA
+933    2020     1  16  Thursday         11           20       12         15
+934    2020     1  16  Thursday          8           10       NA         NA
+935    2020     1  16  Thursday         10           45       NA         NA
+936    2020     1  16  Thursday         12           25       NA         NA
+937    2020     1  16  Thursday         13           45       NA         NA
+                              event  value                             units
+1                             birth     NA                                  
+2                        trait_mass   4.39                                kg
+3                        trait_mass   4.14                                kg
+4                        trait_mass   4.11                                kg
+5                      trait_length  54.60                                cm
+6                 trait_head_circum  33.00                                cm
+7                        trait_mass   4.39                                kg
+8                      trait_length  56.10                                cm
+9                        trait_mass   4.74                                kg
+10                     trait_length  56.50                                cm
+11                       trait_mass   5.53                                kg
+12                     trait_length  61.60                                cm
+13                trait_head_circum  38.70                                cm
+14                       trait_mass   6.69                                kg
+15                     trait_length  65.40                                cm
+16                trait_head_circum  40.60                                cm
+17                       trait_mass   7.82                                kg
+18                     trait_length  68.60                                cm
+19                trait_head_circum  42.50                                cm
+20                              wet     NA                                  
+21                              dry     NA                                  
+22                            bowel     NA                                  
+23                 caregiver_change     NA                                  
+24                           bottle   2.00                                oz
+25                           bottle   2.00                                oz
+26                              nap     NA                                  
+27                           arrive     NA                                  
+28                              wet     NA                                  
+29                              wet     NA                                  
+30                              wet     NA                                  
+31                              wet     NA                                  
+32                           bottle   3.50                                oz
+33                           bottle   2.00                                oz
+34                           bottle   3.00                                oz
+35                              nap     NA                                  
+36                              nap     NA                                  
+37                              wet     NA                                  
+38                            bowel     NA                                  
+39                            bowel     NA                                  
+40                            bowel     NA                                  
+41                            bowel     NA                                  
+42                            bowel     NA                                  
+43                           bottle   3.00                                oz
+44                           bottle   2.00                                oz
+45                           bottle   2.00                                oz
+46                           bottle   5.00                                oz
+47                              nap     NA                                  
+48                              nap     NA                                  
+49                           arrive     NA                                  
+50                              wet     NA                                  
+51                            bowel     NA                                  
+52                            bowel     NA                                  
+53                              wet     NA                                  
+54                            bowel     NA                                  
+55                           bottle   2.00                                oz
+56                           bottle   3.00                                oz
+57                           bottle   2.00                                oz
+58                           bottle   1.50                                oz
+59                           bottle   4.00                                oz
+60                              nap     NA                                  
+61                              nap     NA                                  
+62                           arrive     NA                                  
+63                              wet     NA                                  
+64                              wet     NA                                  
+65                            bowel     NA                                  
+66                              wet     NA                                  
+67                              wet     NA                                  
+68                            bowel     NA                                  
+69                              wet     NA                                  
+70                           bottle   3.00                                oz
+71                           bottle   3.00                                oz
+72                           bottle   2.00                                oz
+73                           bottle   2.00                                oz
+74                              nap     NA                                  
+75                              nap     NA                                  
+76                              nap     NA                                  
+77                  intro_solidfood     NA                                  
+78                           arrive     NA                                  
+79                              wet     NA                                  
+80                            bowel     NA                                  
+81                              wet     NA                                  
+82                            bowel     NA                                  
+83                              wet     NA                                  
+84                            bowel     NA                                  
+85                            bowel     NA                                  
+86                           bottle   3.50                                oz
+87                           bottle   3.00                                oz
+88                              nap     NA                                  
+89                              nap     NA                                  
+90                           arrive     NA                                  
+91                            bowel     NA                                  
+92                              wet     NA                                  
+93                              wet     NA                                  
+94                            bowel     NA                                  
+95                            bowel     NA                                  
+96                           bottle   3.00                                oz
+97                           bottle   3.00                                oz
+98                           bottle   2.00                                oz
+99                              nap     NA                                  
+100                             nap     NA                                  
+101                             nap     NA                                  
+102                          arrive     NA                                  
+103                             wet     NA                                  
+104                             wet     NA                                  
+105                           bowel     NA                                  
+106                           bowel     NA                                  
+107                           bowel     NA                                  
+108                             wet     NA                                  
+109                          bottle   2.00                                oz
+110                          bottle   3.00                                oz
+111                          bottle   2.50                                oz
+112                             nap     NA                                  
+113                             nap     NA                                  
+114                             nap     NA                                  
+115                             wet     NA                                  
+116                           bowel     NA                                  
+117                             wet     NA                                  
+118                           bowel     NA                                  
+119                             wet     NA                                  
+120                             wet     NA                                  
+121                          bottle   3.00                                oz
+122                          bottle   3.00                                oz
+123                          bottle   2.00                                oz
+124                             nap     NA                                  
+125                             nap     NA                                  
+126                          arrive     NA                                  
+127                             dry     NA                                  
+128                             wet     NA                                  
+129                             wet     NA                                  
+130                           bowel     NA                                  
+131                           bowel     NA                                  
+132                           bowel     NA                                  
+133                          bottle   2.00                                oz
+134                          bottle   3.00                                oz
+135                          bottle   3.50                                oz
+136                             nap     NA                                  
+137                             nap     NA                                  
+138                          arrive     NA                                  
+139                             wet     NA                                  
+140                             wet     NA                                  
+141                           bowel     NA                                  
+142                           bowel     NA                                  
+143                             wet     NA                                  
+144                             wet     NA                                  
+145                          bottle   3.00                                oz
+146                          bottle   3.00                                oz
+147                          bottle   2.00                                oz
+148                          bottle   2.00                                oz
+149                             nap     NA                                  
+150                             nap     NA                                  
+151                             nap     NA                                  
+152                          arrive     NA                                  
+153                           bowel     NA                                  
+154                             wet     NA                                  
+155                             wet     NA                                  
+156                             wet     NA                                  
+157                           bowel     NA                                  
+158                           bowel     NA                                  
+159                             wet     NA                                  
+160                          bottle   3.50                                oz
+161                          bottle   1.00                                oz
+162                          bottle   2.50                                oz
+163                             nap     NA                                  
+164                             nap     NA                                  
+165                          arrive     NA                                  
+166                             wet     NA                                  
+167                             wet     NA                                  
+168                           bowel     NA                                  
+169                           bowel     NA                                  
+170                           bowel     NA                                  
+171                           bowel     NA                                  
+172                          bottle   2.00                                oz
+173                          bottle   2.50                                oz
+174                          bottle   2.00                                oz
+175                          bottle   2.00                                oz
+176                             nap     NA                                  
+177                             nap     NA                                  
+178                          arrive     NA                                  
+179                             dry     NA                                  
+180                             wet     NA                                  
+181                           bowel     NA                                  
+182                             wet     NA                                  
+183                             wet     NA                                  
+184                             wet     NA                                  
+185                          bottle   2.00                                oz
+186                          bottle   2.00                                oz
+187                          bottle   2.50                                oz
+188                          bottle   3.00                                oz
+189                             nap     NA                                  
+190                             wet     NA                                  
+191                           bowel     NA                                  
+192                             wet     NA                                  
+193                             wet     NA                                  
+194                           bowel     NA                                  
+195                             dry     NA                                  
+196                          bottle   2.00                                oz
+197                          bottle   1.00                                oz
+198                          bottle   3.00                                oz
+199                          bottle   1.50                                oz
+200                             nap     NA                                  
+201                             nap     NA                                  
+202                             wet     NA                                  
+203                             wet     NA                                  
+204                             wet     NA                                  
+205                             wet     NA                                  
+206                             wet     NA                                  
+207                           bowel     NA                                  
+208                          bottle   2.50                                oz
+209                          bottle   1.00                                oz
+210                          bottle   2.00                                oz
+211                          bottle   2.00                                oz
+212                             nap     NA                                  
+213                             nap     NA                                  
+214                          arrive     NA                                  
+215                skill_crawl_army     NA                                  
+216                             wet     NA                                  
+217                           bowel     NA                                  
+218                             wet     NA                                  
+219                             wet     NA                                  
+220                             wet     NA                                  
+221                             wet     NA                                  
+222                          bottle   2.00                                oz
+223                          bottle   4.50                                oz
+224                          bottle   2.00                                oz
+225                             nap     NA                                  
+226                          arrive     NA                                  
+227                             dry     NA                                  
+228                             wet     NA                                  
+229                           bowel     NA                                  
+230                           bowel     NA                                  
+231                             wet     NA                                  
+232                             wet     NA                                  
+233                          bottle   2.00                                oz
+234                          bottle   2.00                                oz
+235                          bottle   2.00                                oz
+236                             nap     NA                                  
+237                             nap     NA                                  
+238                caregiver_change     NA                                  
+239                             wet     NA                                  
+240                             wet     NA                                  
+241                             wet     NA                                  
+242                          bottle   2.00                                oz
+243                          bottle   2.50                                oz
+244                             nap     NA                                  
+245                             nap     NA                                  
+246                      trait_mass   8.48                                kg
+247                     temperature  99.30                          degreesF
+248                     temperature  98.20                          degreesF
+249                      amoxicilin   5.00                                ml
+250                             wet     NA                                  
+251                           bowel     NA                                  
+252                             dry     NA                                  
+253                           bowel     NA                                  
+254                           bowel     NA                                  
+255                caregiver_change     NA                                  
+256                          bottle   2.00                                oz
+257                          bottle   2.00                                oz
+258                             nap     NA                                  
+259                      amoxicilin   5.00                                ml
+260                      amoxicilin   5.00                                ml
+261                      amoxicilin   5.00                                ml
+262                     intro_grass     NA                                  
+263                      amoxicilin   5.00                                ml
+264                      amoxicilin   5.00                                ml
+265                             wet     NA                                  
+266                             wet     NA                                  
+267                           bowel     NA                                  
+268                             wet     NA                                  
+269                          bottle   1.50                                oz
+270                          bottle   2.00                                oz
+271                             nap     NA                                  
+272                             nap     NA                                  
+273                          arrive     NA                                  
+274                     temperature 101.40                          degreesF
+275                      trait_mass   8.56                                kg
+276                     temperature 102.10                          degreesF
+277                      amoxicilin   5.00                                ml
+278                      amoxicilin   5.00                                ml
+279                             wet     NA                                  
+280                             wet     NA                                  
+281                           bowel     NA                                  
+282                          diaper     NA                                  
+283                          bottle   2.00                                oz
+284                caregiver_change     NA                                  
+285       intro_solidfood_regularly     NA                                  
+286                      amoxicilin   5.00                                ml
+287                      amoxicilin   5.00                                ml
+288                         tylenol   3.75                                mL
+289                caregiver_change     NA                                  
+290                             wet     NA                                  
+291                           bowel     NA                                  
+292                           bowel     NA                                  
+293                           bowel     NA                                  
+294                             wet     NA                                  
+295                             wet     NA                                  
+296                          bottle   1.00                                oz
+297                          bottle   2.00                                oz
+298                          bottle   1.00                                oz
+299                          bottle   2.00                                oz
+300                             nap     NA                                  
+301                             nap     NA                                  
+302                      amoxicilin   5.00                                ml
+303                      amoxicilin   5.00                                ml
+304                             dry     NA                                  
+305                             wet     NA                                  
+306                             wet     NA                                  
+307                           bowel     NA                                  
+308                             wet     NA                                  
+309                          bottle   1.00                                oz
+310                          bottle   2.00                                oz
+311                          bottle   2.50                                oz
+312                          bottle   2.00                                oz
+313                           bowel     NA                                  
+314                           bowel     NA                                  
+315                             nap     NA                                  
+316                             nap     NA                                  
+317                      amoxicilin   5.00                                ml
+318                      amoxicilin   5.00                                ml
+319                             wet     NA                                  
+320                             wet     NA                                  
+321                           bowel     NA                                  
+322                             wet     NA                                  
+323                           bowel     NA                                  
+324                          bottle   1.00                                oz
+325                          bottle   2.00                                oz
+326                          bottle   1.50                                oz
+327                             nap     NA                                  
+328                             nap     NA                                  
+329                          arrive     NA                                  
+330                      amoxicilin   5.00                                ml
+331                      amoxicilin   5.00                                ml
+332 trait_tooth_incisor_lower_right     NA                                  
+333                      amoxicilin   5.00                                ml
+334                      amoxicilin   5.00                                ml
+335          intro_highflow_nipples     NA                                  
+336                caregiver_change     NA                                  
+337                             dry     NA                                  
+338                             wet     NA                                  
+339                             wet     NA                                  
+340                             wet     NA                                  
+341                           bowel     NA                                  
+342                          bottle   2.00                                oz
+343                          bottle   3.00                                oz
+344                          bottle   3.00                                oz
+345                             nap     NA                                  
+346                             nap     NA                                  
+347                             wet     NA                                  
+348                             wet     NA                                  
+349                             wet     NA                                  
+350                             wet     NA                                  
+351                          bottle   1.00                                oz
+352                          bottle   1.00                                oz
+353                          bottle   1.00                                oz
+354                          bottle   1.00                                oz
+355                             nap     NA                                  
+356                             nap     NA                                  
+357                             nap     NA                                  
+358                             wet     NA                                  
+359                             wet     NA                                  
+360                           bowel     NA                                  
+361                             dry     NA                                  
+362                           bowel     NA                                  
+363                          bottle   1.00                                oz
+364                          bottle   1.00                                oz
+365                          bottle   2.00                                oz
+366                             nap     NA                                  
+367                             nap     NA                                  
+368                             wet     NA                                  
+369                             wet     NA                                  
+370                             wet     NA                                  
+371                          bottle   2.00                                oz
+372                          bottle   1.00                                oz
+373                          bottle   3.00                                oz
+374                             nap     NA                                  
+375                             nap     NA                                  
+376       intro_sleeping_thru_night     NA                                  
+377             skill_situp_partial     NA                                  
+378                             dry     NA                                  
+379                             wet     NA                                  
+380                             wet     NA                                  
+381                           bowel     NA                                  
+382                             wet     NA                                  
+383                          bottle   2.00                                oz
+384                          bottle   2.00                                oz
+385                          bottle   1.50                                oz
+386                          bottle   1.50                                oz
+387                             nap     NA                                  
+388                             nap     NA                                  
+389                             dry     NA                                  
+390                             wet     NA                                  
+391                             wet     NA                                  
+392                           bowel     NA                                  
+393                             wet     NA                                  
+394                          bottle   2.00                                oz
+395                          bottle   3.50                                oz
+396                          bottle   3.00                                oz
+397                             nap     NA                                  
+398                             nap     NA                                  
+399                             wet     NA                                  
+400                caregiver_change     NA                                  
+401                             wet     NA                                  
+402                             wet     NA                                  
+403                           bowel     NA                                  
+404                             wet     NA                                  
+405                             nap     NA                                  
+406                             nap     NA                                  
+407                          bottle   3.00                                oz
+408                          bottle   2.00                                oz
+409                          bottle   2.00                                oz
+410                          bottle   2.00                                oz
+411                             wet     NA                                  
+412                             wet     NA                                  
+413                             wet     NA                                  
+414                             wet     NA                                  
+415                          bottle   1.50                                oz
+416                          bottle   2.50                                oz
+417                          bottle   2.00                                oz
+418                          bottle   2.00                                oz
+419                             nap     NA                                  
+420                             nap     NA                                  
+421                             wet     NA                                  
+422                             wet     NA                                  
+423                             wet     NA                                  
+424                             wet     NA                                  
+425                           bowel     NA                                  
+426                caregiver_change     NA                                  
+427                          bottle   2.00                                oz
+428                          bottle   2.50                                oz
+429                          bottle   2.00                                oz
+430                          bottle   2.50                                oz
+431                             nap     NA                                  
+432                             nap     NA                                  
+433                    skill_pullup     NA                                  
+434                             dry     NA                                  
+435                             wet     NA                                  
+436                             wet     NA                                  
+437                           bowel     NA                                  
+438                             wet     NA                                  
+439                             wet     NA                                  
+440                          bottle   2.00                                oz
+441                          bottle   3.00                                oz
+442                          bottle   2.00                                oz
+443                             nap     NA                                  
+444                             nap     NA                                  
+445          intro_sleeping_nursery     NA                                  
+446  trait_tooth_incisor_lower_left     NA                                  
+447                             dry     NA                                  
+448                             wet     NA                                  
+449                             wet     NA                                  
+450                             wet     NA                                  
+451                             wet     NA                                  
+452                          bottle   2.00                                oz
+453                          bottle   1.00                                oz
+454                          bottle   2.00                                oz
+455                          bottle   3.00                                oz
+456                          bottle   2.50                                oz
+457                             nap     NA                                  
+458                             nap     NA                                  
+459                             dry     NA                                  
+460                           bowel     NA                                  
+461                             wet     NA                                  
+462                             wet     NA                                  
+463                             wet     NA                                  
+464                          bottle   1.50                                oz
+465                          bottle   3.00                                oz
+466                          bottle   2.00                                oz
+467                          bottle   3.00                                oz
+468                          bottle   2.50                                oz
+469                          bottle   2.50                                oz
+470                             nap     NA                                  
+471                             nap     NA                                  
+472                             dry     NA                                  
+473                             wet     NA                                  
+474                             wet     NA                                  
+475                             wet     NA                                  
+476                             wet     NA                                  
+477                             wet     NA                                  
+478                          bottle   1.50                                oz
+479                          bottle   3.00                                oz
+480                          bottle   3.00                                oz
+481                          bottle   3.00                                oz
+482                          bottle   2.00                                oz
+483                          bottle   2.00                                oz
+484                             nap     NA                                  
+485                             nap     NA                                  
+486                caregiver_change     NA                                  
+487                             dry     NA                                  
+488                             wet     NA                                  
+489                             wet     NA                                  
+490                             wet     NA                                  
+491                             wet     NA                                  
+492                             wet     NA                                  
+493                          bottle   2.00                                oz
+494                          bottle   2.00                                oz
+495                          bottle   2.00                                oz
+496                          bottle   2.00                                oz
+497                          bottle   2.00                                oz
+498                          bottle   2.00                                oz
+499                             nap     NA                                  
+500                             nap     NA                                  
+501                             wet     NA                                  
+502                             wet     NA                                  
+503                             wet     NA                                  
+504                             wet     NA                                  
+505                             wet     NA                                  
+506                          bottle   2.00                                oz
+507                          bottle   2.00                                oz
+508                          bottle   3.00                                oz
+509                          bottle   3.00                                oz
+510                          bottle   3.00                                oz
+511                          bottle   2.50                                oz
+512                             nap     NA                                  
+513                             nap     NA                                  
+514                          solids   3.00                            pepper
+515                          solids   1.00                     pepper_cheese
+516                             dry     NA                                  
+517                             wet     NA                                  
+518                             wet     NA                                  
+519                             wet     NA                                  
+520                             wet     NA                                  
+521                             wet     NA                                  
+522                          bottle   1.50                                oz
+523                          bottle   2.50                                oz
+524                          bottle   3.00                                oz
+525                          bottle   2.00                                oz
+526                          bottle   3.00                                oz
+527                          bottle   1.50                                oz
+528                          bottle   3.00                                oz
+529                          solids   3.00                     pepper_cheese
+530                          solids   0.00                pepper_sweetpotato
+531                             nap     NA                                  
+532                             nap     NA                                  
+533                             wet     NA                                  
+534                             wet     NA                                  
+535                             wet     NA                                  
+536                             wet     NA                                  
+537                             wet     NA                                  
+538                          bottle   2.50                                oz
+539                          bottle   2.50                                oz
+540                          bottle   3.00                                oz
+541                          bottle   2.50                                oz
+542                          solids   3.00                     squash_cheese
+543                          solids   2.00                     pepper_cheese
+544                             nap     NA                                  
+545                             wet     NA                                  
+546                             wet     NA                                  
+547                             wet     NA                                  
+548                             wet     NA                                  
+549                           bowel     NA                                  
+550                          bottle   2.50                                oz
+551                          bottle   2.50                                oz
+552                          bottle   3.00                                oz
+553                          bottle   3.00                                oz
+554                             nap     NA                                  
+555                             nap     NA                                  
+556                          solids   4.00                        egg_pepper
+557                          solids   1.00                        egg_pepper
+558                caregiver_change     NA                                  
+559                             dry     NA                                  
+560                             wet     NA                                  
+561                caregiver_change     NA                                  
+562                             wet     NA                                  
+563                          diaper     NA                                  
+564                           bowel     NA                                  
+565                             dry     NA                                  
+566                          bottle   3.00                                oz
+567                          bottle   3.00                                oz
+568                          bottle   3.00                                oz
+569                          bottle   3.00                                oz
+570                             nap     NA                                  
+571                             wet     NA                                  
+572                             wet     NA                                  
+573                           bowel     NA                                  
+574                             wet     NA                                  
+575                             wet     NA                                  
+576                             nap     NA                                  
+577                caregiver_change     NA                                  
+578                          solids   3.00                      pepper_bread
+579                          solids   3.00                     noodles_bread
+580                          bottle   3.00                                oz
+581                          bottle   2.50                                oz
+582                          bottle   3.00                                oz
+583                          bottle   3.00                                oz
+584                             wet     NA                                  
+585                             wet     NA                                  
+586                           bowel     NA                                  
+587                             wet     NA                                  
+588                          bottle   3.00                                oz
+589                          bottle   3.50                                oz
+590                          bottle   3.00                                oz
+591                          bottle   3.00                                oz
+592                             nap     NA                                  
+593                          solids   3.00                       cauliflower
+594                          solids   2.00                           noodles
+595                          solids   2.00                cauliflower_pepper
+596                             wet     NA                                  
+597                             wet     NA                                  
+598                           bowel     NA                                  
+599                           bowel     NA                                  
+600                             wet     NA                                  
+601                          bottle   2.50                                oz
+602                          bottle   3.00                                oz
+603                          bottle   3.00                                oz
+604                          bottle   3.00                                oz
+605                          bottle   3.00                                oz
+606                             nap     NA                                  
+607                             nap     NA                                  
+608                          solids   1.00                pepper_cauliflower
+609                          solids   2.00                           noodles
+610                caregiver_change     NA                                  
+611                caregiver_change     NA                                  
+612                             wet     NA                                  
+613                             wet     NA                                  
+614                             wet     NA                                  
+615                           bowel     NA                                  
+616                             wet     NA                                  
+617                caregiver_change     NA                                  
+618                             nap     NA                                  
+619                          bottle   4.00                                oz
+620                          bottle   3.00                                oz
+621                          bottle   3.00                                oz
+622                      trait_mass   8.48                                kg
+623                    trait_length  71.80                                cm
+624          skill_pullup_regularly     NA                                  
+625                skill_crawl_full     NA                                  
+626                             dry     NA                                  
+627                             wet     NA                                  
+628                             wet     NA                                  
+629                             wet     NA                                  
+630                           bowel     NA                                  
+631                          bottle   3.50                                oz
+632                          bottle   4.00                                oz
+633                             nap     NA                                  
+634                          solids     NA                  noodles_zucchini
+635                             wet     NA                                  
+636                      amoxicilin   7.00                                mL
+637                      amoxicilin   7.00                                mL
+638                           bowel     NA                                  
+639                             wet     NA                                  
+640                             wet     NA                                  
+641                             wet     NA                                  
+642                          bottle   3.50                                  
+643                          bottle   3.00                                  
+644                             nap     NA                                  
+645                          solids   3.00                    noodles_squash
+646                          solids   2.00                            squash
+647                      amoxicilin   7.00                                mL
+648                      amoxicilin   7.00                                mL
+649                             wet     NA                                  
+650                           bowel     NA                                  
+651                             wet     NA                                  
+652                           bowel     NA                                  
+653                             wet     NA                                  
+654                          bottle   1.50                                oz
+655                          bottle   4.00                                oz
+656                          bottle   5.00                                oz
+657                          solids   2.00                  noodles_zucchini
+658                          solids   5.00                          zucchini
+659                             nap     NA                                  
+660                      amoxicilin   7.00                                mL
+661                      amoxicilin   7.00                                mL
+662                      amoxicilin   7.00                                mL
+663                      amoxicilin   7.00                                mL
+664                             wet     NA                                  
+665                             wet     NA                                  
+666                             wet     NA                                  
+667                             wet     NA                                  
+668                             wet     NA                                  
+669                          bottle   0.00                                oz
+670                          bottle   3.00                                oz
+671                          bottle   4.00                                oz
+672                          bottle   3.00                                oz
+673                          bottle   4.00                                oz
+674                             nap     NA                                  
+675                          solids   2.00                          zucchini
+676                          solids   0.00                          zucchini
+677                caregiver_change     NA                                  
+678                      amoxicilin   7.00                                ml
+679                             wet     NA                                  
+680                             wet     NA                                  
+681                             wet     NA                                  
+682                           bowel     NA                                  
+683                             wet     NA                                  
+684                          bottle   6.00                                oz
+685                          bottle   3.00                                oz
+686                          bottle   3.00                                oz
+687                          bottle   2.00                                oz
+688                          solids   3.00                           irongoo
+689                          solids   3.00                           irongoo
+690                             nap     NA                                  
+691                             nap     NA                                  
+692                             wet     NA                                  
+693                             wet     NA                                  
+694                             wet     NA                                  
+695                             wet     NA                                  
+696                          bottle   1.50                                oz
+697                          bottle   4.00                                oz
+698                          bottle   3.00                                oz
+699                          bottle   4.00                                oz
+700                          solids   2.00                         toast_egg
+701                          solids   3.00                               egg
+702                          solids   3.00                               egg
+703                             nap     NA                                  
+704                             wet     NA                                  
+705                           bowel     NA                                  
+706                             wet     NA                                  
+707                           bowel     NA                                  
+708                             dry     NA                                  
+709                          solids   3.50                                  
+710                          solids   2.00                                  
+711                          solids   5.00                                  
+712                          solids   4.00                                  
+713                          solids   3.00                               egg
+714                          solids   3.00                           irongoo
+715                          solids   2.00                           irongoo
+716                             nap     NA                                  
+717                          bottle   3.10                                oz
+718                          solids   1.00                           sausage
+719                             nap     NA                                  
+720                      trait_mass   8.79                                kg
+721                    trait_length  73.00                                cm
+722                             dry     NA                                  
+723                             wet     NA                                  
+724                             dry     NA                                  
+725                             wet     NA                                  
+726                           bowel     NA                                  
+727                          bottle   3.00                                oz
+728                          bottle   3.00                                oz
+729                          bottle   3.00                                oz
+730                          bottle   3.00                                oz
+731                             nap     NA                                  
+732                          solids   3.00                           irongoo
+733                          solids   3.00                           irongoo
+734 trait_tooth_incisor_upper_right     NA                                  
+735                             wet     NA                                  
+736                           bowel     NA                                  
+737                             wet     NA                                  
+738                             wet     NA                                  
+739                             wet     NA                                  
+740                          bottle   4.00                                oz
+741                          bottle   3.00                                oz
+742                          bottle   2.00                                oz
+743                          bottle   1.50                                oz
+744                          solids   3.00                           irongoo
+745                          solids   3.00                           irongoo
+746                          solids   2.00                           irongoo
+747                             nap     NA                                  
+748                          bottle   3.00                                oz
+749                             wet     NA                                  
+750                             wet     NA                                  
+751                             wet     NA                                  
+752                             wet     NA                                  
+753                          bottle   3.00                                oz
+754                          bottle   3.50                                oz
+755                          bottle   3.50                                oz
+756                          bottle   2.00                                oz
+757                             nap     NA                                  
+758                          solids   2.00                           irongoo
+759                          solids   3.00                           irongoo
+760                          solids   3.00                           irongoo
+761  trait_tooth_incisor_upper_left     NA                                  
+762                             wet     NA                                  
+763                             wet     NA                                  
+764                             wet     NA                                  
+765                             wet     NA                                  
+766                             nap     NA                                  
+767                          bottle   4.00                                oz
+768                          bottle   4.00                                oz
+769                          bottle   2.00                                oz
+770                          bottle   0.00                                oz
+771                          solids   4.00                            waffle
+772                          solids   4.00                           irongoo
+773                          solids   1.00                             apple
+774                             wet     NA                                  
+775                             wet     NA                                  
+776                             wet     NA                                  
+777                             wet     NA                                  
+778                           bowel     NA                                  
+779                          bottle   4.00                                oz
+780                          bottle   4.00                                oz
+781                          bottle   3.00                                oz
+782                             nap     NA                                  
+783                          solids   3.00              biscuit_gravy_orange
+784                          solids   3.00                        greenbeans
+785                          solids   2.00                   graham_crackers
+786                             wet     NA                                  
+787                             wet     NA                                  
+788                             wet     NA                                  
+789                             wet     NA                                  
+790                          bottle   3.00                                oz
+791                          bottle   4.00                                oz
+792                          bottle   4.00                                oz
+793                          bottle   3.00                                oz
+794                             nap     NA                                  
+795                          solids   3.00                           cheerio
+796                          solids   2.50       ham_mashedpotato_strawberry
+797                          solids   3.00                    gcracker_apple
+798                             wet     NA                                  
+799                             wet     NA                                  
+800                             wet     NA                                  
+801                             wet     NA                                  
+802                             wet     NA                                  
+803                          bottle   2.00                                oz
+804                          bottle   3.00                                oz
+805                          bottle   1.00                                oz
+806                          bottle   3.00                                oz
+807                             nap     NA                                  
+808                          solids   3.00                      banana_toast
+809                          solids   2.00          turkey_cheese_applesauce
+810                          solids   3.00                   crackers_cheese
+811                             dry     NA                                  
+812                             wet     NA                                  
+813                             wet     NA                                  
+814                             wet     NA                                  
+815                             wet     NA                                  
+816                          bottle   3.00                                oz
+817                          bottle   3.00                                oz
+818                          bottle   1.00                                oz
+819                          bottle   3.00                                oz
+820                             nap     NA                                  
+821                          solids   3.00                 irongoo_vegetable
+822                          solids   3.00                           irongoo
+823                             wet     NA                                  
+824                             wet     NA                                  
+825                             wet     NA                                  
+826                             dry     NA                                  
+827                          bottle   3.00                                oz
+828                          bottle   4.00                                oz
+829                             nap     NA                                  
+830                          solids   3.00                            waffle
+831                          solids   0.00                   ham_squash_corn
+832                          solids   3.00                      bread_raisin
+833                             wet     NA                                  
+834                             wet     NA                                  
+835                             wet     NA                                  
+836                             wet     NA                                  
+837                             dry     NA                                  
+838                          bottle   3.00                                oz
+839                          bottle   1.00                                oz
+840                          bottle   2.00                                oz
+841                             nap     NA                                  
+842                          solids   3.00                           irongoo
+843                          solids   1.00                            squash
+844                          solids   3.00                           irongoo
+845                             wet     NA                                  
+846                             wet     NA                                  
+847                           bowel     NA                                  
+848                             dry     NA                                  
+849                          bottle   1.00                                oz
+850                          bottle   1.00                                oz
+851                          bottle   2.00                                oz
+852                          solids   2.50                           irongoo
+853                          solids   3.00                            carrot
+854                          solids   3.00                    irongoo_carrot
+855                             nap     NA                                  
+856                             dry     NA                                  
+857                             wet     NA                                  
+858                             wet     NA                                  
+859                             wet     NA                                  
+860                          bottle   3.00                                oz
+861                          bottle   4.00                                oz
+862                             nap     NA                                  
+863                          solids   3.00                        raisinbran
+864                          solids   3.00 meatballs_mashedpotato_strawberry
+865                          solids   3.00                            cheese
+866                             wet     NA                                  
+867                             wet     NA                                  
+868                             wet     NA                                  
+869                          bottle   2.00                                oz
+870                          bottle   3.00                                oz
+871                             nap     NA                                  
+872                          solids   3.00                           noodles
+873                          solids   3.00                             fruit
+874                             dry     NA                                  
+875                             wet     NA                                  
+876                             wet     NA                                  
+877                             wet     NA                                  
+878                             wet     NA                                  
+879                          bottle   1.00                                oz
+880                          bottle   0.00                                oz
+881                          bottle   1.50                                oz
+882                          solids   2.00                             fruit
+883                          solids   3.00                           noodles
+884                          solids   3.00                             fruit
+885                             nap     NA                                  
+886                             wet     NA                                  
+887                           bowel     NA                                  
+888                             wet     NA                                  
+889                          bottle   1.00                                oz
+890                          bottle   2.00                                oz
+891                          solids   3.00                cheese_toast_apple
+892                          solids   3.00            noodles_banana_veggies
+893                          solids   3.00                          gcracker
+894                             nap     NA                                  
+895                             wet     NA                                  
+896                             wet     NA                                  
+897                             wet     NA                                  
+898                             wet     NA                                  
+899                             nap     NA                                  
+900                          bottle   1.00                                oz
+901                          bottle   2.00                                oz
+902                          solids   3.00                          cheerios
+903                          solids   3.00                           noodles
+904                          solids   2.00                             apple
+905                             wet     NA                                  
+906                             wet     NA                                  
+907                             wet     NA                                  
+908                             wet     NA                                  
+909                          bottle   2.00                                oz
+910                          bottle   0.50                                oz
+911                             nap     NA                                  
+912                          solids   1.00                       toast_apple
+913                          solids   2.50                             apple
+914                          solids   3.00                             fruit
+915                             wet     NA                                  
+916                           bowel     NA                                  
+917                             wet     NA                                  
+918                             dry     NA                                  
+919                             nap     NA                                  
+920                          bottle   0.00                                oz
+921                          bottle   1.00                                oz
+922                          bottle   0.00                                oz
+923                          solids   3.00                            cereal
+924                          solids   2.00           turkey_potato_pineapple
+925                          solids     NA             banana_animalcrackers
+926                             dry     NA                                  
+927                             wet     NA                                  
+928                             wet     NA                                  
+929                             wet     NA                                  
+930                             wet     NA                                  
+931                          bottle   0.50                                oz
+932                          bottle   0.00                                oz
+933                             nap     NA                                  
+934                          solids   3.00                     toast_oatmeal
+935                          solids   3.00        chicken_broccoli_pineapple
+936                          solids   3.00                       blueberries
+937                          solids   3.00 blueberries_animalcrackers_yogurt
+    caregiver age
+1         kch   0
+2     rainbow   0
+3     rainbow   2
+4     rainbow   4
+5     rainbow   4
+6     rainbow   4
+7     rainbow   8
+8     rainbow   8
+9     rainbow  12
+10    rainbow  12
+11    rainbow  32
+12    rainbow  32
+13    rainbow  32
+14    rainbow  67
+15    rainbow  67
+16    rainbow  67
+17    rainbow 123
+18    rainbow 123
+19    rainbow 123
+20         jr 126
+21         jr 126
+22         jr 126
+23    vona_jr 126
+24         jr 126
+25         jr 126
+26         jr 126
+27       <NA> 127
+28       vona 127
+29       vona 127
+30       vona 127
+31       vona 127
+32       vona 127
+33       vona 127
+34       vona 127
+35       vona 127
+36       vona 127
+37       vona 130
+38         jr 130
+39       vona 130
+40       vona 130
+41       vona 130
+42       vona 130
+43       vona 130
+44       vona 130
+45       vona 130
+46       vona 130
+47       vona 130
+48       vona 130
+49       <NA> 130
+50         jr 131
+51         jr 131
+52         jr 131
+53         jr 131
+54         jr 131
+55         jr 131
+56         jr 131
+57         jr 131
+58         jr 131
+59         jr 131
+60         jr 131
+61         jr 131
+62       <NA> 134
+63       vona 134
+64       vona 134
+65       vona 134
+66       vona 134
+67       vona 134
+68       vona 134
+69       vona 134
+70       vona 134
+71       vona 134
+72       vona 134
+73       vona 134
+74       vona 134
+75       vona 134
+76       vona 134
+77     jsmkch 137
+78       <NA> 139
+79       vona 139
+80       vona 139
+81       vona 139
+82       vona 139
+83       vona 139
+84       vona 139
+85       vona 139
+86       vona 139
+87       vona 139
+88       vona 139
+89       vona 139
+90       <NA> 140
+91       vona 140
+92       vona 140
+93       vona 140
+94       vona 140
+95       vona 140
+96       vona 140
+97       vona 140
+98       vona 140
+99       vona 140
+100      vona 140
+101      vona 140
+102      <NA> 141
+103      vona 141
+104      vona 141
+105      vona 141
+106        ap 141
+107      vona 141
+108      vona 141
+109      vona 141
+110      vona 141
+111      vona 141
+112      vona 141
+113      vona 141
+114      vona 141
+115      vona 144
+116      vona 144
+117      vona 144
+118      vona 144
+119      vona 144
+120      vona 144
+121      vona 144
+122      vona 144
+123      vona 144
+124      vona 144
+125      vona 144
+126      <NA> 144
+127        ap 145
+128        ap 145
+129        ap 145
+130        ap 145
+131        ap 145
+132        ap 145
+133        ap 145
+134        ap 145
+135        ap 145
+136        ap 145
+137        ap 145
+138      <NA> 146
+139      vona 146
+140      vona 146
+141      vona 146
+142      vona 146
+143      vona 146
+144      vona 146
+145      vona 146
+146      vona 146
+147      vona 146
+148      vona 146
+149      vona 146
+150      vona 146
+151      vona 146
+152      <NA> 147
+153      vona 147
+154      vona 147
+155      vona 147
+156      vona 147
+157      vona 147
+158      vona 147
+159      vona 147
+160      vona 147
+161      vona 147
+162      vona 147
+163      vona 147
+164      vona 147
+165      <NA> 148
+166      vona 148
+167      vona 148
+168      vona 148
+169      vona 148
+170      vona 148
+171      vona 148
+172      vona 148
+173      vona 148
+174      vona 148
+175      vona 148
+176      vona 148
+177      vona 148
+178      <NA> 151
+179      vona 151
+180      vona 151
+181      vona 151
+182      vona 151
+183      vona 151
+184      vona 151
+185      vona 151
+186      vona 151
+187      vona 151
+188      vona 151
+189      vona 151
+190        ap 153
+191        ap 153
+192        ap 153
+193        ap 153
+194        ap 153
+195        ap 153
+196        ap 153
+197        ap 153
+198        ap 153
+199        ap 153
+200        ap 153
+201        ap 153
+202      vona 155
+203      vona 155
+204      vona 155
+205      vona 155
+206      vona 155
+207      vona 155
+208      vona 155
+209      vona 155
+210      vona 155
+211      vona 155
+212      vona 155
+213      vona 155
+214      <NA> 155
+215    jsmkch 157
+216      vona 158
+217      vona 158
+218      vona 158
+219      vona 158
+220      vona 158
+221      vona 158
+222      vona 158
+223      vona 158
+224      vona 158
+225      vona 158
+226      <NA> 158
+227        ap 159
+228        ap 159
+229        ap 159
+230        ap 159
+231        ap 159
+232        ap 159
+233        ap 159
+234        ap 159
+235        ap 159
+236        ap 159
+237        ap 159
+238   vona_ap 160
+239      vona 160
+240      vona 160
+241        ap 160
+242      vona 160
+243      vona 160
+244      vona 160
+245        ap 160
+246   rainbow 160
+247   rainbow 160
+248   rainbow 160
+249    jsmkch 161
+250      vona 162
+251      vona 162
+252        ij 162
+253        ij 162
+254        kc 162
+255     ij_kc 162
+256      vona 162
+257        ij 162
+258        ij 162
+259    jsmkch 162
+260    jsmkch 162
+261    jsmkch 163
+262    jsmkch 164
+263    jsmkch 164
+264    jsmkch 164
+265      vona 165
+266      vona 165
+267      vona 165
+268      vona 165
+269      vona 165
+270      vona 165
+271      vona 165
+272      vona 165
+273      <NA> 165
+274      vona 165
+275   rainbow 165
+276   rainbow 165
+277    jsmkch 165
+278    jsmkch 165
+279        ij 166
+280        ij 166
+281        ij 166
+282        kc 166
+283        kc 166
+284     ij_kc 166
+285    jsmkch 166
+286    jsmkch 166
+287    jsmkch 166
+288        ij 167
+289     ij_kc 167
+290        ij 167
+291        ij 167
+292        ij 167
+293        ij 167
+294        ij 167
+295        kc 167
+296        ij 167
+297        ij 167
+298        ij 167
+299        ij 167
+300        ij 167
+301        ij 167
+302    jsmkch 167
+303    jsmkch 167
+304        ap 168
+305        ap 168
+306        ap 168
+307        ap 168
+308        ap 168
+309        ap 168
+310        ap 168
+311        ap 168
+312        ap 168
+313        ap 168
+314        ap 168
+315        ap 168
+316        ap 168
+317    jsmkch 168
+318    jsmkch 168
+319      vona 169
+320      vona 169
+321      vona 169
+322      vona 169
+323      vona 169
+324      vona 169
+325      vona 169
+326      vona 169
+327      vona 169
+328      vona 169
+329      <NA> 169
+330    jsmkch 169
+331    jsmkch 169
+332    jsmkch 169
+333    jsmkch 170
+334    jsmkch 170
+335    jsmkch 172
+336   kc_vona 172
+337        kc 172
+338        kc 172
+339      vona 172
+340      vona 172
+341      vona 172
+342        kc 172
+343      vona 172
+344      vona 172
+345      vona 172
+346      vona 172
+347        ap 173
+348        ap 173
+349        ap 173
+350        ap 173
+351        ap 173
+352        ap 173
+353        ap 173
+354        ap 173
+355        ap 173
+356        ap 173
+357        ap 173
+358        ij 174
+359        kc 174
+360        ij 174
+361        ij 174
+362        ij 174
+363        ij 174
+364        ij 174
+365        ij 174
+366        ij 174
+367        ij 174
+368        ap 175
+369        ap 175
+370        ap 175
+371        ap 175
+372        ap 175
+373        ap 175
+374        ap 175
+375        ap 175
+376    jsmkch 179
+377    jsmkch 179
+378        ap 180
+379        ap 180
+380        ap 180
+381        ap 180
+382        ap 180
+383        ap 180
+384        ap 180
+385        ap 180
+386        ap 180
+387        ap 180
+388        ap 180
+389        ap 181
+390        ap 181
+391        ap 181
+392        ap 181
+393        ap 181
+394        ap 181
+395        ap 181
+396        ap 181
+397        ap 181
+398        ap 181
+399        ap 182
+400   ap_vona 182
+401      vona 182
+402      vona 182
+403      vona 182
+404      vona 182
+405      vona 182
+406      vona 182
+407      vona 182
+408      vona 182
+409      vona 182
+410      vona 182
+411        ap 183
+412        ap 183
+413        ap 183
+414        ap 183
+415        ap 183
+416        ap 183
+417        ap 183
+418        ap 183
+419        ap 183
+420        ap 183
+421        kc 186
+422      vona 186
+423      vona 186
+424      vona 186
+425      vona 186
+426   kc_vona 186
+427      vona 186
+428      vona 186
+429      vona 186
+430      vona 186
+431      vona 186
+432      vona 186
+433  vona_kch 186
+434        ap 187
+435        ap 187
+436        ap 187
+437        jd 187
+438        ap 187
+439        ap 187
+440        ap 187
+441        ap 187
+442        ap 187
+443        ap 187
+444        ap 187
+445    jsmkch 187
+446    jsmkch 188
+447        kc 188
+448        ap 188
+449        ap 188
+450        ap 188
+451        ap 188
+452        ap 188
+453        ap 188
+454        ap 188
+455        ap 188
+456        ap 188
+457        ap 188
+458        ap 188
+459        ap 189
+460        ap 189
+461        ap 189
+462        ap 189
+463        ap 189
+464        ap 189
+465        ap 189
+466        ap 189
+467        ap 189
+468        ap 189
+469        ap 189
+470        ap 189
+471        ap 189
+472        kc 190
+473        ap 190
+474      vona 190
+475      vona 190
+476      vona 190
+477      vona 190
+478        ap 190
+479      vona 190
+480      vona 190
+481      vona 190
+482      vona 190
+483      vona 190
+484      vona 190
+485      vona 190
+486   ap_vona 190
+487        ap 193
+488        ap 193
+489      vona 193
+490      vona 193
+491      vona 193
+492      vona 193
+493      vona 193
+494      vona 193
+495      vona 193
+496      vona 193
+497      vona 193
+498      vona 193
+499      vona 193
+500      vona 193
+501        ap 194
+502        ap 194
+503        jd 194
+504        ap 194
+505        ap 194
+506        ap 194
+507        ap 194
+508        ap 194
+509        ap 194
+510        ap 194
+511        ap 194
+512        ap 194
+513        ap 194
+514        ap 194
+515        ap 194
+516        ap 195
+517        ap 195
+518        ap 195
+519        ap 195
+520        ap 195
+521        kc 195
+522        ap 195
+523        ap 195
+524        ap 195
+525        ap 195
+526        ap 195
+527        ap 195
+528        ap 195
+529        ap 195
+530        ap 195
+531        ap 195
+532        ap 195
+533        ap 196
+534        ap 196
+535        ap 196
+536        ap 196
+537        ap 196
+538        ap 196
+539        ap 196
+540        ap 196
+541        ap 196
+542        ap 196
+543        ap 196
+544        ap 196
+545        ap 197
+546      vona 197
+547      vona 197
+548      vona 197
+549      vona 197
+550        ap 197
+551      vona 197
+552      vona 197
+553      vona 197
+554      vona 197
+555      vona 197
+556      vona 197
+557      vona 197
+558   ap_vona 197
+559        kc 200
+560        kc 200
+561     kc_ij 200
+562        ij 200
+563        ij 200
+564        ij 200
+565        ij 200
+566        ij 200
+567        ij 200
+568        ij 200
+569        ij 200
+570        ij 200
+571        ap 201
+572        ap 201
+573        jd 201
+574        kc 201
+575        kc 201
+576        ap 201
+577     ap_kc 201
+578        ap 201
+579        ap 201
+580        ap 201
+581        ap 201
+582        ap 201
+583        ap 201
+584        ap 202
+585        ap 202
+586        ap 202
+587        ap 202
+588        ap 202
+589        ap 202
+590        ap 202
+591        ap 202
+592        ap 202
+593        ap 202
+594        ap 202
+595        ap 202
+596        ap 203
+597        ap 203
+598        ap 203
+599    melody 203
+600        ap 203
+601        ap 203
+602        ap 203
+603        ap 203
+604        ap 203
+605        ap 203
+606        ap 203
+607        ap 203
+608        ap 203
+609        ap 203
+610 ap_melody 203
+611 melody_ap 203
+612        ap 204
+613      vona 204
+614      vona 204
+615      vona 204
+616      vona 204
+617   ap_vona 204
+618      vona 204
+619      vona 204
+620      vona 204
+621      vona 204
+622   rainbow 204
+623   rainbow 204
+624    jsmkch 205
+625    jsmkch 206
+626        ap 208
+627        ap 208
+628        ap 208
+629        ap 208
+630        ap 208
+631        ap 208
+632        ap 208
+633        ap 208
+634        ap 208
+635        ap 208
+636    jsmkch 208
+637    jsmkch 208
+638        ap 209
+639        ap 209
+640        ap 209
+641        ap 209
+642        ap 209
+643        ap 209
+644        ap 209
+645        ap 209
+646        ap 209
+647    jsmkch 209
+648    jsmkch 209
+649        ap 210
+650        ap 210
+651        jd 210
+652        ap 210
+653        kc 210
+654        ap 210
+655        jd 210
+656        ap 210
+657        ap 210
+658        ap 210
+659        jd 210
+660    jsmkch 210
+661    jsmkch 210
+662    jsmkch 211
+663    jsmkch 211
+664        kc 211
+665      vona 211
+666      vona 211
+667      vona 211
+668      vona 211
+669      vona 211
+670      vona 211
+671      vona 211
+672      vona 211
+673      vona 211
+674      vona 211
+675      vona 211
+676      vona 211
+677   kc_vona 211
+678    jsmkch 214
+679      vona 214
+680      vona 214
+681      vona 214
+682      vona 214
+683      vona 214
+684      vona 214
+685      vona 214
+686      vona 214
+687      vona 214
+688      vona 214
+689      vona 214
+690      vona 214
+691      vona 214
+692        ap 215
+693        ap 215
+694        ap 215
+695        ap 215
+696        ap 215
+697        ap 215
+698        ap 215
+699        ap 215
+700        ap 215
+701        ap 215
+702        ap 215
+703        ap 215
+704        ap 216
+705        ap 216
+706        ap 216
+707        ap 216
+708        ap 216
+709        ap 216
+710        ap 216
+711        ap 216
+712        ap 216
+713        ap 216
+714        ap 216
+715        ap 216
+716        ap 216
+717       jsm 217
+718       jsm 217
+719       jsm 217
+720   rainbow 217
+721   rainbow 217
+722        kc 229
+723        kc 229
+724        kc 229
+725        kc 229
+726        kc 229
+727        kc 229
+728        kc 229
+729        kc 229
+730        kc 229
+731        kc 229
+732        kc 229
+733        kc 229
+734    jsmkch 229
+735        ap 230
+736        ap 230
+737        ap 230
+738        ap 230
+739        ap 230
+740        ap 230
+741        ap 230
+742        ap 230
+743        ap 230
+744        ap 230
+745        ap 230
+746        ap 230
+747        ap 230
+748        ap 230
+749        ap 231
+750        ap 231
+751        jd 231
+752        ap 231
+753        ap 231
+754        ap 231
+755        ap 231
+756        ap 231
+757        ap 231
+758        ap 231
+759        ap 231
+760        ap 231
+761    jsmkch 233
+762        ap 235
+763        ap 235
+764      vona 235
+765        ap 235
+766      vona 235
+767        ap 235
+768        ap 235
+769        ap 235
+770        ap 235
+771        ap 235
+772        ap 235
+773        ap 235
+774        ap 236
+775        ap 236
+776        ap 236
+777        ap 236
+778        ap 236
+779        ap 236
+780        ap 236
+781        ap 236
+782        ap 236
+783        ap 236
+784        ap 236
+785        ap 236
+786        kc 237
+787        kc 237
+788        ap 237
+789        ap 237
+790        kc 237
+791        kc 237
+792        ap 237
+793        ap 237
+794        ap 237
+795        kc 237
+796        ap 237
+797        ap 237
+798        ap 238
+799        ap 238
+800        ap 238
+801        ap 238
+802        kc 238
+803        ap 238
+804        ap 238
+805        ap 238
+806        ap 238
+807        ap 238
+808        ap 238
+809        ap 238
+810        ap 238
+811        kc 239
+812        kc 239
+813        kc 239
+814        kc 239
+815        kc 239
+816        kc 239
+817        kc 239
+818        kc 239
+819        kc 239
+820        kc 239
+821        kc 239
+822        kc 239
+823        ap 243
+824        ap 243
+825        ap 243
+826        ap 243
+827        ap 243
+828        ap 243
+829        ap 243
+830        ap 243
+831        ap 243
+832        ap 243
+833        ap 244
+834        ap 244
+835        ij 244
+836        ap 244
+837        kc 244
+838        ap 244
+839        ap 244
+840        ap 244
+841        ap 244
+842        ap 244
+843        ap 244
+844        ap 244
+845        ap 245
+846        ap 245
+847        ap 245
+848        ap 245
+849        ap 245
+850        ap 245
+851        ap 245
+852        ap 245
+853        ap 245
+854        ap 245
+855        ap 245
+856        kc 263
+857        ap 263
+858        ap 263
+859        ap 263
+860        ap 263
+861        ap 263
+862        ap 263
+863        ap 263
+864        ap 263
+865        ap 263
+866        ap 265
+867        kc 265
+868        ap 265
+869        ap 265
+870        ap 265
+871        ap 265
+872        ap 265
+873        ap 265
+874        kc 266
+875        ap 266
+876        ap 266
+877        ap 266
+878        ap 266
+879        ap 266
+880        ap 266
+881        ap 266
+882        ap 266
+883        ap 266
+884        ap 266
+885        ap 266
+886        ap 267
+887        ap 267
+888        ap 267
+889        ap 267
+890        ap 267
+891        ap 267
+892        ap 267
+893        ap 267
+894        ap 267
+895        ap 270
+896        ap 270
+897        ap 270
+898        kc 270
+899        ap 270
+900        ap 270
+901        ap 270
+902        ap 270
+903        ap 270
+904        ap 270
+905        ap 271
+906        ap 271
+907        ap 271
+908        ap 271
+909        ap 271
+910        ap 271
+911        ap 271
+912        ap 271
+913        ap 271
+914        ap 271
+915        ap 272
+916        kc 272
+917        ap 272
+918        ap 272
+919        ap 272
+920        ap 272
+921        ap 272
+922        ap 272
+923        ap 272
+924        ap 272
+925        ap 272
+926        kc 273
+927        ap 273
+928        ap 273
+929        ap 273
+930        kc 273
+931        ap 273
+932        ap 273
+933        ap 273
+934        ap 273
+935        ap 273
+936        ap 273
+937        ap 273
+> Feeds <- beren3[which(beren3$event == "bottle"),]
+> avgMilk <- mean(beren3$value[Feeds])
+Error in beren3$value[Feeds] : invalid subscript type 'list'
+> head(beren3)
+  ï..year month day     dotw start_hour start_minute end_hour end_minute
+1    2019     4  18 Thursday         11           53       NA         NA
+2    2019     4  18 Thursday         NA           NA       NA         NA
+3    2019     4  20 Saturday         NA           NA       NA         NA
+4    2019     4  22   Monday         NA           NA       NA         NA
+5    2019     4  22   Monday         NA           NA       NA         NA
+6    2019     4  22   Monday         NA           NA       NA         NA
+              event value units caregiver age
+1             birth    NA             kch   0
+2        trait_mass  4.39    kg   rainbow   0
+3        trait_mass  4.14    kg   rainbow   2
+4        trait_mass  4.11    kg   rainbow   4
+5      trait_length 54.60    cm   rainbow   4
+6 trait_head_circum 33.00    cm   rainbow   4
+> head(Feeds)
+   ï..year month day     dotw start_hour start_minute end_hour end_minute
+24    2019     8  22 Thursday         10           45       NA         NA
+25    2019     8  22 Thursday         13           40       NA         NA
+32    2019     8  23   Friday          8           38       NA         NA
+33    2019     8  23   Friday         10           30       NA         NA
+34    2019     8  23   Friday         12           45       NA         NA
+43    2019     8  26   Monday          7           45       NA         NA
+    event value units caregiver age
+24 bottle   2.0    oz        jr 126
+25 bottle   2.0    oz        jr 126
+32 bottle   3.5    oz      vona 127
+33 bottle   2.0    oz      vona 127
+34 bottle   3.0    oz      vona 127
+43 bottle   3.0    oz      vona 130
+> # Read in the data
+> beren3 <- read.csv("beren_new.csv")
+> Feeds <- which(beren3$event == "bottle")
+> # Summarize the data
+> avgMilk <- mean(beren3$value[Feeds])
+> avgFeed <- tapply(beren3$value[Feeds], beren3$age[Feeds], mean)
+> varFeed <- tapply(beren3$value[Feeds], beren3$age[Feeds], var)
+> totalFeed <- tapply(beren3$value[Feeds], beren3$age[Feeds], sum)
+> numFeeds <- tapply(beren3$value[Feeds], beren3$age[Feeds], length)
+> # Correlation test on the data
+> cor(beren3$value[Feeds], beren3$age[Feeds])
+[1] -0.03097247
+> cor.test(beren3$value[Feeds], beren3$age[Feeds])
+
+        Pearson's product-moment correlation
+
+data:  beren3$value[Feeds] and beren3$age[Feeds]
+t = -0.49483, df = 255, p-value = 0.6211
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ -0.15275637  0.09173804
+sample estimates:
+        cor 
+-0.03097247 
+
+> berenCor <- cor.test(beren3$value[Feeds], beren3$age[Feeds])
+> summary(berenCor)
+            Length Class  Mode     
+statistic   1      -none- numeric  
+parameter   1      -none- numeric  
+p.value     1      -none- numeric  
+estimate    1      -none- numeric  
+null.value  1      -none- numeric  
+alternative 1      -none- character
+method      1      -none- character
+data.name   1      -none- character
+conf.int    2      -none- numeric  
+> berenCor
+
+        Pearson's product-moment correlation
+
+data:  beren3$value[Feeds] and beren3$age[Feeds]
+t = -0.49483, df = 255, p-value = 0.6211
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ -0.15275637  0.09173804
+sample estimates:
+        cor 
+-0.03097247 
+
+> berenANOVA <- (beren3$value[Feeds] ~ beren3$caregiver[Feeds])
+> berenANOVA <- aov(beren3$value[Feeds] ~ beren3$caregiver[Feeds])
+> berenANOVA
+Call:
+   aov(formula = beren3$value[Feeds] ~ beren3$caregiver[Feeds])
+
+Terms:
+                beren3$caregiver[Feeds] Residuals
+Sum of Squares                  8.28755 220.44187
+Deg. of Freedom                       6       250
+
+Residual standard error: 0.9390247
+Estimated effects may be unbalanced
+> summary(berenANOVA)
+                         Df Sum Sq Mean Sq F value Pr(>F)
+beren3$caregiver[Feeds]   6   8.29  1.3813   1.566  0.157
+Residuals               250 220.44  0.8818               
+> boxplot(beren3$value[Feeds] ~ beren3$caregiver[Feeds], xlab= "who gave the bottle", ylab= "amount of milk consumed (oz)")
+> ?par
+starting httpd help server ... done
+> par(las=1, mar=c(5, 5, 1, 1), mgp=c(2, 0.5, 0), tck=-0.01)
+> plot(as.numeric(names(totalFeed)), totalFeed, type="b", pch=16, xlab="age in days", ylab="ounces of milk")
+> abline(h=mean(TotalFeed), lty=2, col="red")
+Error in mean(TotalFeed) : object 'TotalFeed' not found
+> abline(h=mean(totalFeed), lty=2, col="red")
+> pdf("r02b-totalMilkByDay.pdf", height = 4, width = 4)
+> par(las=1, mar=c(5, 5, 1, 1), mgp=c(2, 0.5, 0), tck=-0.01)
+> plot(as.numeric(names(totalFeed)), totalFeed, type="b", pch=16, xlab="age in days", ylab="ounces of milk")
+> abline(h=mean(totalFeed), lty =2, col="red")
+> dev.off()
+windows 
+      2 
+> source("http://jonsmitchell.com/code/plotFxn02b.R")
+> pdf("r02b-cumulativeMilkByTime.pdf")
+> source("http://jonsmitchell.com/code/plotFxn02b.R")
+> dev.off()
+windows 
+      2 
+> q()
+> 
