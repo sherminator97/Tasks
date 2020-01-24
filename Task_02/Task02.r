@@ -91,3 +91,6 @@ dev.off()
 #Question2
 The reason the graph is impossible to interpret is because there might have been some inconsistent data.
 
+#selfquiz
+unique(beren3$event)
+
