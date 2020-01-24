@@ -27,7 +27,7 @@ Feeds <- which(beren$event == "bottle")
 berenMilk <- beren[Feeds,]
 dayID <- apply(beren, 1, function(x) paste(x[1:3], collapse="-"))
 dateID <- sapply(dayID, as.Date, format = "%Y-%m-%d", origin = " 2019-04-18")
-beren$age <- dateID -dateID[which(data$event == "birth")]
+beren$age <- dateID -dateID[which(beren$event == "birth")]
 head(beren)
 beren2 <- beren
 beren3 <- beren2[order(beren2$age) ,]
