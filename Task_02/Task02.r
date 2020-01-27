@@ -94,3 +94,53 @@ The reason the graph is impossible to interpret is because there might have been
 #selfquiz
 unique(beren3$event)
 
+#Task02c
+
+#hypothesis is the amount of solid food increases by age
+setwd("C:\\Users\\Sherm\\Desktop\\Evolution\\Tasks\\Task_02")
+beren <- read.csv("beren_new.csv", stringsAsFactors = FALSE)
+head(beren)
+Feeds <- which(beren$event == "solids")
+totalFeed <- tapply(beren$value[Feeds], beren$age[Feeds], sum)
+par(las=1, mar=c(5, 5, 1, 1), mgp=c(2, 0.5, 0), tck=-0.01)
+plot(as.numeric(names(totalFeed)), totalFeed, type="b", pch=16, xlab="age", ylab="totalSolids")
+cor.test(beren$value[Feeds], beren$age[Feeds])
+
+#savepdf
+pdf("r02c-totalSolidsByAge.pdf", height = 4, width = 4)
+par(las=1, mar=c(5,5,1,1), mgp=c(2, 0.5, 0), tck= -0.01)
+plot(as.numeric(names(totalFeed)), totalFeed, type="b", pch=16, xlab="age", ylab="totalSolids")
+dev.off()
+
+#extracredit
+#my specific prediction is that Beren ate a total amount of 4 solid foods next Tuesday
+beren <- read.csv("beren_new.csv", stringsAsFactors = FALSE)
+head(beren)
+Feeds <- which(beren$event == "solids")
+totalFeeds <- beren[Feeds,]
+head(totalFeeds)
+
+
+# 1st: us lm() or some other function to model total solids by age
+model <- lm(totalFeed ~ as.numeric(names(totalFeed)))
+
+# This gives you a mathematical model. y = mx + b So now
+# How old (what age) will Beren be on the day you're predicting?
+summary(model)
+# Use that age for x and solve for y, that is your prediction
+model <- function(x){0.05087 * x - -4.7690}
+model
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
