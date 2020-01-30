@@ -124,12 +124,11 @@ head(totalFeeds)
 # 1st: us lm() or some other function to model total solids by age
 model <- lm(totalFeed ~ as.numeric(names(totalFeed)))
 
-# This gives you a mathematical model. y = mx + b So now
-# How old (what age) will Beren be on the day you're predicting?
-summary(model)
-# Use that age for x and solve for y, that is your prediction
-model <- function(x){0.05087 * x - -4.7690}
-model
+model$coefficients
+
+300 * model$coefficients[2] + model$coefficients[1]
+predict(model, newdata=data.frame(age=300))
+
 
   
 
