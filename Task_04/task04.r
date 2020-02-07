@@ -103,14 +103,14 @@ HWE(0.5)
 #make blank plot
 plot(1, 1, type="n", xlim=c(0, 1), ylim=c(0, 1), xlab="freq. allele a", ylab="geno. freq")
 
-#calculare genotypic frequencies for a bunch of allele frequencies
+#calculate genotypic frequencies for a bunch of allele frequencies
 p <- seq(from = 0, to = 1, by = 0.01)
 GenoFreq <- t(sapply(p, HWE))
 
 #plot known allele frequency against expected genotypic frequencies
 lines(p, GenoFreq[, "aa"], lwd=2, col="red")
 
-#as the frequency of a allele increases, so does the frequency of aa individuals. if the frequency of the a allele decreases, so does the frequency of aa individuals.
+#as the frequency of a allele increases, so does the frequency of aa individuals. if the frequency of the a allele decreases, so does the frequency of aa individuals. there is no time or geographic space shown on this plot 
 
 #add other genotypes
 lines(p, GenoFreq[, "ab"], lwd=2, col="purple")
@@ -182,18 +182,4 @@ abline(Line2)
 
 #Based on the graph, as the population size increases, genetic drift gets slower and it takes a long time for alleles to go extinct.  
 
-install.packages("lmtest")
-library(lmtest)
-bptest(Line)
-
-install.packages("sandwich")
-library(sandwich)
-vcovHC(Line)
-coeftest(Line, vcov = vcovHC(Line))
-coeftest(Line, vcov = vcovHC(Line, type = "HC0"))
-
-install.packages("robustbase")
-library(robustbase)
-Linerobfit <- lmrob(tExt~Samples)
-summary(Linerobfit)
 
