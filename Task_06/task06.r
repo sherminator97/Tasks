@@ -56,9 +56,9 @@ dev.off()
 
 #question 1. It is impossible to interpret the number of alleles and modify the number of alleles. the simulation runs random with the number of alleles. 
 
-#question 2. The average number of offspring each haploid indiviudal has is 1. The variance in that number is 1. 
+#question 2. It takes approximately 10 to 20 generations for one allele to go to fixation. 
 
-#question 3. Thw average number of offspring each haploid individual has is one. 
+#question 3. Thw average number of offspring each haploid individual has is one and the variance is one.  
 
 #question 4. Fitness does not play a role in these simulations. instead, genetic drift plays a role in these simulations because it is random.  
 
