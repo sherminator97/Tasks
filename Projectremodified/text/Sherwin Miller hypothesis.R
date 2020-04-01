@@ -1,2 +1,3 @@
 #hypothesis
-My hypothesis is that environmental conditions decrease the speciation rate in Australian lizards. 
+My hypothesis is that Australian lizards that have the same ecotype habitat have significantly different body part sizes.
+
