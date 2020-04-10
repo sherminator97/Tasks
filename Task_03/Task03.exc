@@ -1,0 +1,10 @@
+#install packages
+install.packages("auk", dep = T)
+
+#set directory
+setwd("C:\\Users\\Sherm\\Desktop\\Evolution\\Tasks\\Task_03")
+library(auk)
+
+f_in <- system.file(, package = "auk")
+f_out <- "ebd_filtered_grja.txt"
+ebird_data <- f_in %>% 
