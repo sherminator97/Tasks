@@ -1,4 +1,4 @@
-setwd("C:\\Users\\Sherm\\Desktop\\Evolution\\Tasks\\Projectremodified\\Analysis_Plan")
+setwd("C:\\Users\\Sherm\\Desktop\\Evolution\\Tasks\\Projectremodified\\Project_Final")
 my_data <-read.csv("morph_datarevised.csv", header=TRUE)
 
 
@@ -55,8 +55,3 @@ pdf("Species vs. snout-vent length2.pdf", height=10, width=10)
 par(las=1, mar=c(5, 5, 1, 1), mgp=c(2, 0.5, 0), tck=-0.01)
 plot(my_data$Species, my_data$SVL, xlab="Species", ylab="snout-vent length")
 dev.off()
-
-
-
-
-
